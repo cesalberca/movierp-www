@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import Routes from './Routes';
 import App from './components/App/App';
-import NotFound from './NotFound'
+import NotFound from './components/NotFound/NotFound'
 import './index.css';
 
 ReactDOM.render(
