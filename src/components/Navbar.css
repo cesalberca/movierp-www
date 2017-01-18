@@ -1,24 +1,10 @@
 .Navbar {
-  width: 100%;
+  width: var(--navbar-width);
+  height: 100vh;
   position: fixed;
-  background-color: var(--primary-color);
   display: flex;
-  justify-content: center;
-  transition: var(--long-transition);
-}
-
-.Navbar--skewed {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transform: skew(-25deg);
-  width: 97%;
-  background-color: var(--darkest-color);
-  transform-origin: center center;
-}
-
-.Navbar--skewed > * {
-  transform: skew(25deg);
+  flex-direction: column;
+  background-color: red;
 }
 
 .Navbar__logo {

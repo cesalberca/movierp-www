@@ -1,0 +1,6 @@
+:root {
+  --spacing-unit: 2rem;
+  --default-transition: 0.2s ease all;
+  --long-transition: 1s ease all;
+  --navbar-width: 100px;
+}

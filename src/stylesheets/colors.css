@@ -1,0 +1,36 @@
+:root {
+  --default-tint:1;
+  --dark-tint:0.87;
+  --medium-tint:0.54;
+  --light-tint:0.12;
+
+  --yellow-hsl:55, 95%, 56%;
+  --yellow-color:hsla(var(--yellow-hsl), var(--default-tint));
+  --yellow-light-color:hsla(var(--yellow-hsl), var(--light-tint));
+  --yellow-medium-color:hsla(var(--yellow-hsl), var(--medium-tint));
+  --yellow-dark-color:hsla(var(--yellow-hsl ),var(--dark-tint));
+
+  --green-hsl:134, 97%, 58%;
+  --green-color:hsla(var(--green-hsl), var(--default-tint));
+  --green-light-color:hsla(var(--green-hsl), var(--light-tint));
+  --green-medium-color:hsla(var(--green-hsl), var(--medium-tint));
+  --green-dark-color:hsla(var(--green-hsl ), var(--dark-tint));
+
+  --orange-hsl:31, 91%, 54%;
+  --orange-color:hsla(var(--orange-hsl), var(--default-tint));
+  --orange-light-color:hsla(var(--orange-hsl), var(--light-tint));
+  --orange-medium-color:hsla(var(--orange-hsl), var(--medium-tint));
+  --orange-dark-color:hsla(var(--orange-hsl ), var(--dark-tint));
+
+
+  --pink-hsl:326, 100%, 70%;
+  --pink-color:hsla(var(--pink-hsl), var(--default-tint));
+  --pink-light-color:hsla(var(--pink-hsl), var(--light-tint));
+  --pink-medium-color:hsla(var(--pink-hsl), var(--medium-tint));
+  --pink-dark-color:hsla(var(--pink-hsl ), var(--dark-tint));
+
+  --dark-color:#c2c2c2;
+  --darkest-color:#161616;
+  
+  --primary-color:var(--orange-color);
+}
