@@ -1,0 +1,30 @@
+.Navbar {
+  width: 100%;
+  position: fixed;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  transition: var(--long-transition);
+}
+
+.Navbar--skewed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transform: skew(-25deg);
+  width: 97%;
+  background-color: var(--darkest-color);
+  transform-origin: center center;
+}
+
+.Navbar--skewed > * {
+  transform: skew(25deg);
+}
+
+.Navbar__logo {
+  height: 80px;
+}
+
+.Navbar__index {
+  margin-right: auto;
+}

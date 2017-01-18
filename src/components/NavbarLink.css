@@ -1,0 +1,15 @@
+.NavLink {
+  padding: var(--spacing-unit);
+  color: var(--dark-color);
+  text-decoration: none;
+
+  transition: var(--default-transition);
+}
+
+.NavLink:hover {
+  color: var(--primary-color);
+}
+
+.NavLink--active {
+  color: var(--primary-color);
+}
