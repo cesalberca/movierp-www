@@ -1,8 +1,13 @@
 import React from 'react';
 
+import CinemasList from './../components/CinemasList'
+
 const Cinemas = () => {
     return (
-        <h1>Cinemas</h1>
+        <div>
+            <h1>Cinemas</h1>
+            <CinemasList />
+        </div>
     );
 }
 
