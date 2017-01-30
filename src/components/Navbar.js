@@ -5,14 +5,14 @@ import NavbarLink from './NavbarLink';
 
 import './Navbar.css';
 
-const Navbar = ({logo}) => {
+const Navbar = ({handlePathLocation, logo}) => {
   return (
     <navbar className="Navbar">
-      <IndexLink to="/" className="Navbar__index">
+      <IndexLink onClick={handlePathLocation} to="/" className="Navbar__index">
         <img src={logo} className="Navbar__logo" alt="logo" />
       </IndexLink>
-      <NavbarLink to="/cinemas">Cines</NavbarLink>
-      <NavbarLink to="/employees">Empleados</NavbarLink>
+      <NavbarLink onClick={handlePathLocation} to="/cinemas">Cines</NavbarLink>
+      <NavbarLink onClick={handlePathLocation} to="/employees">Empleados</NavbarLink>
     </navbar>
   );
 }

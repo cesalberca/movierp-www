@@ -10,20 +10,25 @@ import logo from './../assets/logo.svg';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      currentBreadcrumb: this.props.location.pathname
+      currentBreadcrumb: ''
     }
+
+    this.handlePathLocation = this.handlePathLocation.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({currentBreadcrumb: this.props.location.pathname})
+  handlePathLocation() {
+    const currentLocation = this.props.location.pathname;
+    console.log(this.props.location.pathname);
+    this.setState({currentBreadcrumb: currentLocation});
   }
 
   render() {
     return (
       <div className="App">
         <Header breadcrumb={this.state.currentBreadcrumb}/>
-        <Navbar logo={logo} />
+        <Navbar logo={logo} handlePathLocation={this.handlePathLocation} />
         <main className="App__content">
           {this.props.children}
         </main>
