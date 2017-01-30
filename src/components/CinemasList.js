@@ -1,5 +1,6 @@
 import React from 'react';
 
+import TableComponent from './TableComponent';
 import './CinemasList.css';
 
 class CinemasList extends React.Component {
@@ -23,7 +24,7 @@ class CinemasList extends React.Component {
       this.setState({cinemas: json._embedded.cinemas});
     })
     .catch((error) => {
-      console.log(error);
+      alert('Error al conseguir datos del servidor');
     });
   }
 
@@ -33,7 +34,7 @@ class CinemasList extends React.Component {
     });
 
     return (
-        <ul>{cinemasList}</ul>
+        <TableComponent rows={this.state.cinemas} />
     );
   }
 }
