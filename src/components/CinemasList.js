@@ -29,12 +29,31 @@ class CinemasList extends React.Component {
   }
 
   render () {
-    const cinemasList = this.state.cinemas.map((cinema) => {
-      return <li key={cinema._links.self.href}>Cinema: {cinema.nombre}</li>
-    });
+    const cinemasColumn = [
+      {
+        name: 'ID',
+        field: 'idCine'
+      },
+      {
+        name: 'Nombre',
+        field: 'nombre'
+      },
+      {
+        name: 'Cif',
+        field: 'cif'
+      },
+      {
+        name: 'Dirección',
+        field: 'direccion'
+      },
+      {
+        name: 'Código postal',
+        field: 'codigoPostal'
+      }
+    ];
 
     return (
-        <TableComponent data={this.state.cinemas} />
+        <TableComponent data={this.state.cinemas} columns={cinemasColumn} />
     );
   }
 }
