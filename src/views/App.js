@@ -32,16 +32,6 @@ class App extends React.Component {
   }
 
   render() {
-    const myInputs = [
-      {
-        type: 'text',
-        placeholder: 'hola'
-      },
-      {
-        type: 'text',
-        placeholder: 'adios'
-      }
-    ];
     
     return (
       <div className="App">
@@ -49,7 +39,7 @@ class App extends React.Component {
         <Navbar logo={logo} handlePathLocation={this.handlePathLocation} />
         <main className="App__content">
           {this.props.children}
-          <FormContainer myInputs={myInputs}/>
+          <FormContainer/>
         </main>
       </div>
     );
