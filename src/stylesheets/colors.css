@@ -4,7 +4,9 @@
   --medium-tint:0.54;
   --light-tint:0.12;
 
-  --primary-color:rgba(104, 187, 229, 1);
-  --secondary-color: rgba(213, 251, 255, 1);
+  --blue-color:rgba(104, 187, 229, 1);
+  --white-color: rgba(213, 251, 255, 1);
+  --medium-grey: rgba(159, 188, 191, 1);
+  --grey-color: rgba(100, 118, 120, 1);
   --dark-color: rgba(47, 55, 56, 1);
 }

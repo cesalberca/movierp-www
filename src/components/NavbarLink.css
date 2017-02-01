@@ -1,15 +1,27 @@
-.NavLink {
-  padding: var(--spacing-unit);
+.NavbarLink {
+  padding-top: var(--spacing-unit-mini);
+  padding-left: var(--spacing-unit-mini);
   color: var(--dark-color);
   text-decoration: none;
-
   transition: var(--default-transition);
+  font-family: var(--Gloria-Hallelujah);
+  font-size: var(--Font-Size-Large);
 }
 
-.NavLink:hover {
-  color: var(--primary-color);
+.NavbarLink:hover {
+  color: var(--dark-color);
+  background-color: var(--medium-grey);
 }
 
-.NavLink--active {
-  color: var(--primary-color);
+.NavbarLink:active {
+  color: var(--blue-color); 
 }
+
+.NavbarLink:visited{
+  color: var(--white-color);
+}
+
+.NavbarLink:link{
+  color: var(--white-color);
+}
+
