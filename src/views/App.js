@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
 
 import Navbar from './../components/Navbar';
 import Header from './../components/Header';
+import FormContainer from './../components/FormContainer';
+import FormItem from './../components/FormItem';
 
 import './App.css';
 
@@ -16,6 +18,7 @@ class App extends React.Component {
     }
 
     this.handlePathLocation = this.handlePathLocation.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handlePathLocation() {
@@ -24,13 +27,29 @@ class App extends React.Component {
     this.setState({currentBreadcrumb: currentLocation});
   }
 
+  handleInputChange() {
+    console.log('input cambiado');
+  }
+
   render() {
+    const myInputs = [
+      {
+        type: 'text',
+        placeholder: 'hola'
+      },
+      {
+        type: 'text',
+        placeholder: 'adios'
+      }
+    ];
+    
     return (
       <div className="App">
         <Header breadcrumb={this.state.currentBreadcrumb}/>
         <Navbar logo={logo} handlePathLocation={this.handlePathLocation} />
         <main className="App__content">
           {this.props.children}
+          <FormContainer myInputs={myInputs}/>
         </main>
       </div>
     );
