@@ -5,11 +5,11 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
 }
 
 .Navbar__logo {
-  height: 80px;
+  width: var(--navbar-width);
 }
 
 .Navbar__index {

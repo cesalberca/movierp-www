@@ -3,9 +3,11 @@ import {IndexLink} from 'react-router';
 
 import NavbarLink from './NavbarLink';
 
+import logo from './../assets/Icono.png';
+
 import './Navbar.css';
 
-const Navbar = ({handlePathLocation, logo}) => {
+const Navbar = ({handlePathLocation}) => {
   return (
     <navbar className="Navbar">
       <IndexLink onClick={handlePathLocation} to="/" className="Navbar__index">

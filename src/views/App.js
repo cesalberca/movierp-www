@@ -7,8 +7,6 @@ import FormItem from './../components/FormItem';
 
 import './App.css';
 
-import logo from './../assets/logo.svg';
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -36,7 +34,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header breadcrumb={this.state.currentBreadcrumb}/>
-        <Navbar logo={logo} handlePathLocation={this.handlePathLocation} />
+        <Navbar handlePathLocation={this.handlePathLocation} />
         <main className="App__content">
           {this.props.children}
           <FormContainer/>
