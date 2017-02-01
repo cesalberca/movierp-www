@@ -1,36 +1,51 @@
 import React from 'react';
 
 import FormItem from './FormItem';
+import './../stylesheets/formContainer.css'
 
 class FormContainer extends React.Component{
     constructor(props){
         super(props);
 
         this.state = {
-            title: '',
+            title: props.title,
             formItems: [],
-            actionButtonText: ''
+            actionButtonText: props.actionButtonText,
+            tableColumns: []
         };
     }
 
-    render() {
-        fetch('http://localhost:8080/api/profile/cinemas', {
+    componentDidMount() {
+        fetch('http://localhost:8080/api/profile/employees', {
             method: 'GET'
         })
-            .then((response) => {
+        .then((response) => {
             return response.json();
         })
-            .then((json) => {
-            console.log(json.descriptors)
+        .then((json) => {
+            console.log(json.alps.descriptors[0].descriptors)
+            const tableColumns = json.alps.descriptors[0].descriptors;
+            this.setState({tableColumns})
         })
-            .catch((error) => {
+        .catch((error) => {
             alert('Error al conseguir datos del servidor');
         });
+
+    }
+
+    render() {
+        const tableColumnsList = this.state.tableColumns.map((column, index) => {
+            return(
+                <FormItem key={index} title={column.name} />
+            );
+        })
+
         return(
-            <div>
-            <h1>{this.state.title}</h1>
-            <form>
-                <input type="submit" value={this.state.actionButtonText} />
+            <div className="FormContainer__MainContainer">
+            <h1 className="FormContainer__Title">{this.state.title}</h1>
+            <form className="FormContainer__Form">
+                {tableColumnsList}
+                <input className="FormContainer__ActionButton" type="submit" value={this.state.actionButtonText} />
             </form>
         </div>
         );

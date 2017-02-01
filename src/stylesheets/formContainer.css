@@ -1,0 +1,10 @@
+.FormContainer__MainContainer {
+    display: flex;
+    width: 100%;
+    background-color: grey;
+}
+
+.FormContainer__Form {
+    width: inherit;
+    height: inherit;
+}
