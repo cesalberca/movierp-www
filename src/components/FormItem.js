@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './../stylesheets/formItem.css'
+
 const FormItem = ({title, inputType, inputValue, inputPlaceHolder, inputOnChange}) => {
     return (
-        <div>
-            <h1>{title}</h1>
-            <input type={inputType} placeholder={inputPlaceHolder} onChange={inputOnChange}></input>
+        <div className="FormItem__MainContainer">
+            <h1 className="FormItem__Title">{title}</h1>
+            <input className="FormItem__Input" type={inputType} placeholder={inputPlaceHolder} onChange={inputOnChange}></input>
         </div>
     )
 }

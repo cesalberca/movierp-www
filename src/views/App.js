@@ -37,7 +37,7 @@ class App extends React.Component {
         <Navbar handlePathLocation={this.handlePathLocation} />
         <main className="App__content">
           {this.props.children}
-          <FormContainer/>
+          <FormContainer title="New employee" actionButtonText="Create new employee"/>
         </main>
       </div>
     );
