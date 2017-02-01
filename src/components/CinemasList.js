@@ -34,7 +34,7 @@ class CinemasList extends React.Component {
     });
 
     return (
-        <TableComponent rows={this.state.cinemas} />
+        <TableComponent data={this.state.cinemas} />
     );
   }
 }
