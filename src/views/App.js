@@ -7,6 +7,7 @@ import FormItem from './../components/FormItem';
 
 import './App.css';
 import './../stylesheets/fontStyle.css'
+import './../stylesheets/colors.css'
 class App extends React.Component {
   constructor(props) {
     super(props);

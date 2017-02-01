@@ -1,7 +1,7 @@
 .NavbarLink {
   padding-top: var(--spacing-unit-mini);
   padding-left: var(--spacing-unit-mini);
-  color: var(--dark-color);
+  color: var(--medium-grey);
   text-decoration: none;
   transition: var(--default-transition);
   font-family: var(--Gloria-Hallelujah);
@@ -9,19 +9,11 @@
 }
 
 .NavbarLink:hover {
-  color: var(--dark-color);
-  background-color: var(--medium-grey);
+  color: var(--dark-grey);
+  background-color: var(--white-color);
 }
 
 .NavbarLink:active {
-  color: var(--blue-color); 
+  color: var(--white-color); 
+  background-color: var(--white-color);
 }
-
-.NavbarLink:visited{
-  color: var(--white-color);
-}
-
-.NavbarLink:link{
-  color: var(--white-color);
-}
-
