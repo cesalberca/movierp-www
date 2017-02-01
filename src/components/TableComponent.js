@@ -12,7 +12,7 @@ const TableComponent = ({data}) => {
         headerHeight={50}
         width={1000}
         height={500}
-        {...this.props}>
+        >
 
         <Column
           header={<Cell>ID</Cell>}
