@@ -29,13 +29,28 @@ class CinemasList extends React.Component {
   }
 
   render () {
-    const cinemasColumn = [{
-      name: 'ID',
-      field: 'idCine'
-    }, {
-      name: 'Nombre',
-      field: 'nombre'
-    }];
+    const cinemasColumn = [
+      {
+        name: 'ID',
+        field: 'idCine'
+      },
+      {
+        name: 'Nombre',
+        field: 'nombre'
+      },
+      {
+        name: 'Cif',
+        field: 'cif'
+      },
+      {
+        name: 'Dirección',
+        field: 'direccion'
+      },
+      {
+        name: 'Código postal',
+        field: 'codigoPostal'
+      }
+    ];
 
     return (
         <TableComponent data={this.state.cinemas} columns={cinemasColumn} />
