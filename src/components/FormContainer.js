@@ -16,18 +16,20 @@ class FormContainer extends React.Component{
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/api/profile/employees', {
+        fetch('http://localhost:8080/api/profile/employees', {
             method: 'GET'
         })
         .then((response) => {
             return response.json();
         })
         .then((json) => {
-            console.log(json.alps.descriptors[0].descriptors)
+            console.log('Columnas devueltas');
+            console.log(json.alps.descriptors[0].descriptors);
             const tableColumns = json.alps.descriptors[0].descriptors;
             this.setState({tableColumns})
         })
         .catch((error) => {
+            console.log("error de form container", error);
             alert('Error al conseguir datos del servidor');
         });
 
