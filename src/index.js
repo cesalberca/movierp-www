@@ -20,6 +20,7 @@ ReactDOM.render(
       <IndexRoute component={Home} />
       <Route path="cinemas" component={Cinemas} />
       <Route path="employees" component={Employees} />
+      <Route path="users" component={Users} />
     </Route>
   </Router>,
   document.getElementById('root')
