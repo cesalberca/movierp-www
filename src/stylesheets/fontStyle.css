@@ -2,10 +2,114 @@
 
 :root{
     --Gloria-Hallelujah : "'Gloria Hallelujah', cursive";
-
     --Font-Size-Large : 1.5em;
 }
 
+html {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
+
+body {
+    font-family: var(--Gloria-Hallelujah);
+    font-size: 1rem;
+    line-height: 1.7777778rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: 0.25s ease all;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+strong {
+  color: var(--primary-color);
+}
+
+em {
+  opacity: 0.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--Gloria-Hallelujah);
+    font-weight: 700;
+}
+
 h1 {
-    font-size: 10rem;
+  font-size: 4.2222222rem;
+  line-height: 5.3333333rem;
+  margin-top: 1.7777778rem;
+  margin-bottom: 3.5555556rem;
+}
+
+h2 {
+  font-size: 2.6111111rem;
+  line-height: 3.5555556rem;
+  margin-top: 1.7777778rem;
+  margin-bottom: 1.7777778rem;
+}
+
+h3 {
+  font-size: 1.6111111rem;
+  line-height: 1.7777778rem;
+  margin-top: 1.7777778rem;
+  margin-bottom: 0rem;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.7777778rem;
+  margin-top: 1.7777778rem;
+  margin-bottom: 0rem;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 1.7777778rem;
+  margin-top: 1.7777778rem;
+  margin-bottom: 0rem;
+}
+
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0rem;
+  margin-bottom: 1.7777778rem;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+a, b, i, strong, em, small, code {
+  line-height: 0;
+}
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
 }
