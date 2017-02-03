@@ -6,10 +6,12 @@ import App from './views/App';
 import Home from './views/Home';
 import Cinemas from './views/Cinemas';
 import Employees from './views/Employees';
+import Users from './views/Users';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
-import './stylesheets/colors.css'
+import './stylesheets/colors.css';
+import './stylesheets/fontStyle.css';
 import './index.css';
 
 ReactDOM.render(
@@ -18,6 +20,7 @@ ReactDOM.render(
       <IndexRoute component={Home} />
       <Route path="cinemas" component={Cinemas} />
       <Route path="employees" component={Employees} />
+      <Route path="users" component={Users} />
     </Route>
   </Router>,
   document.getElementById('root')

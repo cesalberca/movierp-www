@@ -1,10 +1,14 @@
 import React from 'react';
 import {Table, Column, Cell} from 'fixed-data-table';
+import Dimensions from 'react-dimensions';
+
 import CellComponent from './CellComponent';
 
 import './../stylesheets/fixed-data-table.css';
 
-const TableComponent = ({data, columns}) => {
+class TableComponent extends React.Component {
+  render() {
+    const { columns, data, containerWidth, containerHeight } = this.props;
     const columnsList = columns.map((column, index) => {
       return (
         <Column
@@ -20,12 +24,13 @@ const TableComponent = ({data, columns}) => {
         rowsCount={data.length}
         rowHeight={50}
         headerHeight={50}
-        width={1000}
-        height={500}
+        width={containerWidth}
+        height={containerHeight}
         >
           {columnsList}
       </Table>
     );
+  }
 }
 
-export default TableComponent;
+export default Dimensions()(TableComponent);
