@@ -15,6 +15,7 @@ const Navbar = () => {
       </IndexLink>
       <NavbarLink to="/cinemas">Cines</NavbarLink>
       <NavbarLink to="/employees">Empleados</NavbarLink>
+      <NavbarLink to="/users">Usuarios</NavbarLink>
     </navbar>
   );
 }

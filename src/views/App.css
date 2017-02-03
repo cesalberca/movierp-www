@@ -2,6 +2,7 @@
   width: 100%;
   width: calc(100% - var(--navbar-width));
   margin-left: var(--navbar-width);
+  background-color: var(--grey-color);
 }
 
 .App__content {
