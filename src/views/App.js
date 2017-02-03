@@ -14,7 +14,7 @@ class App extends React.Component {
         <Navbar />
         <main className="App__content">
           {this.props.children}
-          <FormContainer title="New employee" actionButtonText="Create new employee"/>
+          <FormContainer targetTable="employees" title="New employee" actionButtonText="Create new employee"/>
         </main>
       </div>
     );
