@@ -14,7 +14,7 @@
   background-color: var(--white-color);
 }
 
-.NavbarLink:active {
-  color: var(--white-color); 
+.NavbarLink--active {
+  color: var(--dark-grey);
   background-color: var(--white-color);
 }
