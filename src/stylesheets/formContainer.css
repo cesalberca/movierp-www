@@ -1,10 +1,12 @@
 .FormContainer__MainContainer {
     display: flex;
-    width: 100%;
     background-color: grey;
 }
 
+.FormContainer__Title{
+    background-color: red;
+}
+
 .FormContainer__Form {
-    width: inherit;
-    height: inherit;
+    width:100%;
 }

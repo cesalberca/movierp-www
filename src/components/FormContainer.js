@@ -16,7 +16,7 @@ class FormContainer extends React.Component{
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/profile/employees', {
+        fetch('http://localhost:8080/api/profile/' + props.targetTable, {
             method: 'GET'
         })
         .then((response) => {
@@ -35,6 +35,18 @@ class FormContainer extends React.Component{
 
     }
 
+    insertNewEntry() {
+        fetch('http://localhost:8080/' + props.targetTable, {
+            method: 'POST'
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((json) => {
+            console.log(json);
+        }
+    }
+
     render() {
         const tableColumnsList = this.state.tableColumns.map((column, index) => {
             return(
@@ -47,7 +59,7 @@ class FormContainer extends React.Component{
             <h1 className="FormContainer__Title">{this.state.title}</h1>
             <form className="FormContainer__Form">
                 {tableColumnsList}
-                <input className="FormContainer__ActionButton" type="submit" value={this.state.actionButtonText} />
+                <input onClick="insertNewEntry" className="FormContainer__ActionButton" type="submit" value={this.state.actionButtonText} />
             </form>
         </div>
         );

@@ -1,3 +1,5 @@
-.FormItemTitle{
-
+.FormItem__MainContainer{
+    flex-wrap: wrap;
+    width:50%;
+    background-color: deepskyblue;
 }
