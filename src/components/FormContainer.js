@@ -8,15 +8,17 @@ class FormContainer extends React.Component{
         super(props);
 
         this.state = {
-            title: props.title,
+            title: this.props.title,
             formItems: [],
-            actionButtonText: props.actionButtonText,
+            actionButtonText: this.props.actionButtonText,
             tableColumns: []
         };
+
+        this.insertNewEntry = this.insertNewEntry.bind(this);
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/profile/' + props.targetTable, {
+        fetch('http://localhost:8080/api/profile/' + this.props.targetTable, {
             method: 'GET'
         })
         .then((response) => {
@@ -35,7 +37,9 @@ class FormContainer extends React.Component{
 
     }
 
-    insertNewEntry() {  
+    insertNewEntry(e) {
+        e.preventDefault();
+        console.log("click!")
     }
 
     render() {
@@ -50,7 +54,7 @@ class FormContainer extends React.Component{
             <h1 className="FormContainer__Title">{this.state.title}</h1>
             <form className="FormContainer__Form">
                 {tableColumnsList}
-                <input onClick="insertNewEntry" className="FormContainer__ActionButton" type="submit" value={this.state.actionButtonText} />
+                <input onClick={this.insertNewEntry} className="FormContainer__ActionButton" type="submit" value={this.state.actionButtonText} />
             </form>
         </div>
         );
