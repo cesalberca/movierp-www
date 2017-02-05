@@ -1,6 +1,6 @@
 # Movierp WWW
 
-* Instalar primero [NodeJS](https://nodejs.org/en/)(Versión 7.5). 
+* Instalar primero [NodeJS](https://nodejs.org/en/)(Versión 7.5).
 
 * Reiniciar el ordenador
 

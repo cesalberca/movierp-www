@@ -37,7 +37,7 @@ class FormContainer extends React.Component{
 
     }
 
-    insertNewEntry() {  
+    insertNewEntry() {
     }
 
     render() {

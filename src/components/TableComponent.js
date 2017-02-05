@@ -13,8 +13,8 @@ class TableComponent extends React.Component {
       return (
         <Column
           key={index}
-          header={<Cell>{column.name}</Cell>} 
-          cell={<CellComponent data={data} field={column.field}/>} 
+          header={<Cell>{column.name}</Cell>}
+          cell={<CellComponent data={data} field={column.field}/>}
           width={200}/>
       );
     });
