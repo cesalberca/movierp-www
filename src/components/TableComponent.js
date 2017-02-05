@@ -15,7 +15,7 @@ class TableComponent extends React.Component {
           key={index}
           header={<Cell>{column.name}</Cell>}
           cell={<CellComponent data={data} field={column.field}/>}
-          width={200}/>
+          width={150}/>
       );
     });
 
