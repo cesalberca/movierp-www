@@ -31,8 +31,8 @@ class FormContainer extends React.Component{
             this.setState({tableColumns})
         })
         .catch((error) => {
-            console.log("error de form container", error);
-            alert('Error al conseguir datos del servidor');
+            // console.log("error de form container", error);
+            // alert('Error al conseguir datos del servidor');
         });
 
     }

@@ -20,11 +20,11 @@ class CinemasList extends React.Component {
       return response.json();
     })
     .then((json) => {
-      console.log(json)
+      // console.log(json)
       this.setState({cinemas: json._embedded.cinemas});
     })
     .catch((error) => {
-      alert('Error al conseguir datos del servidor');
+      // alert('Error al conseguir datos del servidor');
     });
   }
 
