@@ -8,15 +8,15 @@ class FormContainer extends React.Component{
         super(props);
 
         this.state = {
-            title: props.title,
+            title: this.props.title,
             formItems: [],
-            actionButtonText: props.actionButtonText,
+            actionButtonText: this.props.actionButtonText,
             tableColumns: []
         };
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/profile/' + props.targetTable, {
+        fetch('http://localhost:8080/api/profile/' + this.props.targetTable, {
             method: 'GET'
         })
         .then((response) => {
