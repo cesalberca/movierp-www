@@ -1,8 +1,9 @@
 :root {
-  --spacing-unit: 2rem;
   --spacing-unit-mini: 1rem;
+  --spacing-unit: 2rem;
   --spacing-unit-large: 5rem; 
   --default-transition: 0.2s ease all;
   --long-transition: 1s ease all;
   --navbar-width: 150px;
+  --box-shadow-default: 0px 0px 30px rgba(47, 55, 56, 1);
 }
