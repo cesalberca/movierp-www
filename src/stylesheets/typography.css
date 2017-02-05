@@ -1,32 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 
 :root{
-    --main-font: "Arial";
-    --secondary-font: 'Gloria Hallelujah', cursive;
+  --main-font: "Arial";
+  --secondary-font: 'Gloria Hallelujah', cursive;
 }
 
 html {
-    font-size: 18px;
-    line-height: 32px;
+  font-size: 16px;
+  line-height: 32px;
 }
 
 @media (max-width: 600px) {
-    html {
-        font-size: 16px;
-        line-height: 30px;
-    }
+  html {
+    font-size: 16px;
+    line-height: 30px;
+  }
 }
 
 body {
-    font-family: var(--main-font);
-    font-size: 1rem;
-    line-height: 1.7777778rem;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  line-height: 1.7777778rem;
 }
 
 a {
   text-decoration: none;
   color: var(--primary-color);
-  transition: 0.25s ease all;
+  transition: var(--default-transition);
 }
 
 a:hover {
@@ -42,47 +42,15 @@ em {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--secondary-font);
-    font-weight: 700;
+  font-family: var(--secondary-font);
 }
 
 h1 {
-  font-size: 4.2222222rem;
-  line-height: 5.3333333rem;
-  margin-top: 1.7777778rem;
-  margin-bottom: 3.5555556rem;
-}
-
-h2 {
-  font-size: 2.6111111rem;
-  line-height: 3.5555556rem;
-  margin-top: 1.7777778rem;
-  margin-bottom: 1.7777778rem;
-}
-
-h3 {
-  font-size: 1.6111111rem;
-  line-height: 1.7777778rem;
-  margin-top: 1.7777778rem;
-  margin-bottom: 0rem;
-}
-
-h4 {
-  font-size: 1rem;
-  line-height: 1.7777778rem;
-  margin-top: 1.7777778rem;
-  margin-bottom: 0rem;
-}
-
-h5 {
-  font-size: 1rem;
-  line-height: 1.7777778rem;
-  margin-top: 1.7777778rem;
-  margin-bottom: 0rem;
+  font-size: 2rem;
 }
 
 p {
-  font-size: 1em; /* 18px */
+  font-size: 1rem; /* 18px */
   line-height: 1.7778em; /* 32px */
   margin: 0 0 1.7778em 0;
 }

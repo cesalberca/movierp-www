@@ -1,12 +1,12 @@
 .FormContainer__MainContainer {
-    display: flex;
-    background-color: grey;
+  display: flex;
+  background-color: grey;
 }
 
 .FormContainer__Title{
-    background-color: red;
+  background-color: red;
 }
 
 .FormContainer__Form {
-    width:100%;
+  width: 100%;
 }
