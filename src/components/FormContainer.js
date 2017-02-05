@@ -13,6 +13,8 @@ class FormContainer extends React.Component{
             actionButtonText: this.props.actionButtonText,
             tableColumns: []
         };
+
+        this.insertNewEntry = this.insertNewEntry.bind(this);
     }
 
     componentDidMount() {
@@ -50,7 +52,7 @@ class FormContainer extends React.Component{
             <h1 className="FormContainer__Title">{this.state.title}</h1>
             <form className="FormContainer__Form">
                 {tableColumnsList}
-                <input onClick="insertNewEntry" className="FormContainer__ActionButton" type="submit" value={this.state.actionButtonText} />
+                <input onClick={this.insertNewEntry} className="FormContainer__ActionButton" type="submit" value={this.state.actionButtonText} />
             </form>
         </div>
         );
