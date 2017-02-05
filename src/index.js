@@ -11,7 +11,7 @@ import Users from './views/Users';
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
 import './stylesheets/colors.css';
-import './stylesheets/fontStyle.css';
+import './stylesheets/typography.css';
 import './index.css';
 
 ReactDOM.render(
