@@ -30,8 +30,12 @@ class CinemaRooms extends React.Component {
 
   render() {
     const cinemaRoomsColumn = [
+       {
+        name: 'ID de Cine',
+        field: 'idCine'
+      }, 
       {
-        name: 'ID',
+        name: 'ID de Sala',
         field: 'idSala'
       },
       {
