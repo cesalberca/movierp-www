@@ -9,4 +9,6 @@
   --medium-grey: rgba(159, 188, 191, 1);
   --grey-color: rgba(100, 118, 120, 1);
   --dark-color: rgba(47, 55, 56, 1);
+
+  --primary-color:var(--blue-color);
 }
