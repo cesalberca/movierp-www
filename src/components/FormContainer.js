@@ -38,7 +38,8 @@ class FormContainer extends React.Component{
 
     }
 
-    insertNewEntry() {
+    insertNewEntry(e) {
+        e.preventDefault();
     }
 
     render() {
