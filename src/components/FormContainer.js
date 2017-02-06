@@ -53,7 +53,9 @@ class FormContainer extends React.Component{
             <h1 className="FormContainer__Title">{this.state.title}</h1>
             <form className="FormContainer__Form">
                 {tableColumnsList}
+            <div className="FormContainer__container__actionButton">
                 <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn" type="submit" value={this.state.actionButtonText} />
+            </div>
             </form>
         </div>
         );
