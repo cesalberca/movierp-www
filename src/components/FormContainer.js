@@ -11,13 +11,13 @@ class FormContainer extends React.Component{
             title: this.props.title,
             tableColumns: [],
             formItems: [],
-            formItemsValues: [],
+            formItemsValues: {},
             actionButtonText: this.props.actionButtonText
         };
 
         this.loadFormItems = this.loadFormItems.bind(this);
         this.insertNewEntry = this.insertNewEntry.bind(this);
-        
+        this.formItemsOnChange = this.formItemsOnChange.bind(this);
     }
 
     componentDidMount() {
@@ -47,6 +47,11 @@ class FormContainer extends React.Component{
     }
 
     formItemsOnChange(e) {
+        let changedValues = {};
+        changedValues[e.target.name] = e.target.value;
+        const updatedItems = Object.assign(this.state.formItemsValues, changedValues);
+        console.log(updatedItems);
+        // this.setState({})
       //this.setState({value: e.target.value}); // algo como inputvalues[e.name]
       //this.setState(formItemsValues.e.target.name: e.target.value);
     }
