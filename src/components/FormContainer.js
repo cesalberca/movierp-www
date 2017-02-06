@@ -25,7 +25,6 @@ class FormContainer extends React.Component{
             return response.json();
         })
         .then((json) => {
-            console.log('Columnas devueltas');
             console.log(json.alps.descriptors[0].descriptors);
             const tableColumns = json.alps.descriptors[0].descriptors;
             this.setState({tableColumns})
