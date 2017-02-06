@@ -1,0 +1,23 @@
+.FormContainer__MainContainer {
+  display: flex;
+  background-color: white;
+  min-height: 500px;
+  flex-direction: column;
+  padding: var(--spacing-unit);
+  justify-content: flex-start;
+}
+
+.FormContainer__Title{
+  padding: var(--spacing-unit);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.FormContainer__Form {
+  width: 100%;
+}
+
+.FormContainer__actionButton {
+  align-self: flex-end;
+  text-align: center;
+}
