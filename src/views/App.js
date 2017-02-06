@@ -2,11 +2,9 @@ import React from "react";
 
 import Navbar from './../components/Navbar';
 import FormContainer from './../components/FormContainer';
-import FormItem from './../components/FormItem';
 
 import './App.css';
-import './../stylesheets/fontStyle.css'
-import './../stylesheets/colors.css'
+
 class App extends React.Component {
   render() {
     return(

@@ -20,11 +20,11 @@ class UsersList extends React.Component {
       return response.json();
     })
     .then((json) => {
-      console.log(json)
+      // console.log(json)
       this.setState({users: json._embedded.users});
     })
     .catch((error) => {
-      alert('Error al conseguir datos del servidor');
+      // alert('Error al conseguir datos del servidor');
     });
   }
 

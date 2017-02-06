@@ -1,12 +1,8 @@
 .NavbarLink {
-  padding-top: var(--spacing-unit-mini);
-  padding-left: var(--spacing-unit-mini);
-  padding-bottom: var(--spacing-unit-mini);
+  padding: var(--spacing-unit-mini);
   color: var(--medium-grey);
   text-decoration: none;
   transition: var(--default-transition);
-  font-family: var(--Gloria-Hallelujah);
-  font-size: var(--Font-Size-Large);
 }
 
 .NavbarLink:hover {

@@ -3,7 +3,7 @@ import {IndexLink} from 'react-router';
 
 import NavbarLink from './NavbarLink';
 
-import logo from './../assets/Icono.png';
+import logo from './../assets/logo.svg';
 
 import './Navbar.css';
 
