@@ -10,6 +10,7 @@ import Users from './views/Users';
 import Rooms from './views/Rooms';
 import Clients from './views/Clients';
 import Providers from './views/Providers';
+import Films from './views/Films';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -27,6 +28,7 @@ ReactDOM.render(
       <Route path="rooms" component={Rooms} />
       <Route path="clients" component={Clients} />
       <Route path="providers" component={Providers} />
+      <Route path="films" component={Films} />
     </Route>
   </Router>,
   document.getElementById('root')

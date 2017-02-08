@@ -19,6 +19,7 @@ const Navbar = () => {
       <NavbarLink to="/rooms">Salas</NavbarLink>
       <NavbarLink to="/clients">Clientes</NavbarLink>
       <NavbarLink to="/providers">Proveedores</NavbarLink>
+      <NavbarLink to="/films">Películas</NavbarLink>
     </navbar>
   );
 }

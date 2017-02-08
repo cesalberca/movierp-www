@@ -27,7 +27,7 @@ class Cinemas extends React.Component {
   render() {
     return (
       <div>
-        <h1>Cinemas</h1>
+        <h1>Cines</h1>
         <CinemasList />
 
         <ModalForm isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
