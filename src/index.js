@@ -8,6 +8,7 @@ import Cinemas from './views/Cinemas';
 import Employees from './views/Employees';
 import Users from './views/Users';
 import Rooms from './views/Rooms';
+import Clients from './views/Clients';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="employees" component={Employees} />
       <Route path="users" component={Users} />
       <Route path="rooms" component={Rooms} />
+      <Route path="clients" component={Clients} />
     </Route>
   </Router>,
   document.getElementById('root')

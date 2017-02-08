@@ -17,6 +17,7 @@ const Navbar = () => {
       <NavbarLink to="/employees">Empleados</NavbarLink>
       <NavbarLink to="/users">Usuarios</NavbarLink>
       <NavbarLink to="/rooms">Salas</NavbarLink>
+      <NavbarLink to="/clients">Clientes</NavbarLink>
     </navbar>
   );
 }
