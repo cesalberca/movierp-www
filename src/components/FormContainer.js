@@ -32,17 +32,17 @@ class FormContainer extends React.Component{
             return response.json();
         })
         .then((json) => {
-            console.log("Columnas de tabla cargadas:");
-            console.log(json.alps.descriptors[0].descriptors);
+            //console.log("Columnas de tabla cargadas:");
+            //console.log(json.alps.descriptors[0].descriptors);
             const tableColumns = json.alps.descriptors[0].descriptors;
             this.setState({tableColumns})
 
-            console.log("FormItems cargados:")
-            console.log(this.state.formItems);
+            //console.log("FormItems cargados:")
+            //console.log(this.state.formItems);
         })
         .catch((error) => {
-            // console.log("error de form container", error);
-            // alert('Error al conseguir datos del servidor');
+            console.log("error de form container", error);
+            alert('Error al conseguir datos del servidor');
         });
     }
 
@@ -50,38 +50,18 @@ class FormContainer extends React.Component{
         let changedValues = {};
         changedValues[e.target.name] = e.target.value;
         const updatedItems = Object.assign(this.state.formItemsValues, changedValues);
-        console.log(updatedItems);
-        // this.setState({})
-      //this.setState({value: e.target.value}); // algo como inputvalues[e.name]
-      //this.setState(formItemsValues.e.target.name: e.target.value);
+       // console.log(updatedItems);
     }
 
     insertNewEntry() {
-        /*fetch('https://mywebsite.com/endpoint/', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstParam: 'yourValue',
-                secondParam: 'yourOtherValue',
-            })
-        })*/
-
-        console.log("intento de insert")
         let objectToInsert = {};
-        const body = this.state.tableColumns.map((column, index) => { 
-            return objectToInsert[column] = this.state.formItems[index].state.value;
-        })
-
+        const body = this.state.formItemsValues;
+        //console.log("Body del POST:)
         //console.log(body);
-
         fetch('http://localhost:8080/api/' + this.props.targetTable, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                //aqui habrá que añadir cosas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(
                 body
@@ -95,7 +75,7 @@ class FormContainer extends React.Component{
         })
         .catch((error) => {
             console.log("error de insert en el form container", error);
-            // alert('Error al conseguir datos del servidor');
+            alert('Error al conseguir datos del servidor');
         });
     }
 
