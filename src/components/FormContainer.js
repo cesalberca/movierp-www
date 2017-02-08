@@ -84,7 +84,7 @@ class FormContainer extends React.Component{
     render() {
         this.state.formItems = this.state.tableColumns.map((column, index) => {
             return(
-                <FormItem onChangeEvent={this.formItemsOnChange} key={index} title={column.name} type="text"/>
+                <FormItem label={column.name} onChangeEvent={this.formItemsOnChange} key={index} inputName={column.name} inputType="text"/>
             );
         })
 
