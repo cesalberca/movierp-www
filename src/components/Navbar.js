@@ -21,6 +21,7 @@ const Navbar = () => {
       <NavbarLink to="/clients">Clientes</NavbarLink>
       <NavbarLink to="/providers">Proveedores</NavbarLink>
       <NavbarLink to="/orders">Pedidos</NavbarLink>
+      <NavbarLink to="/products">Productos</NavbarLink>
       <NavbarLink to="/films">Películas</NavbarLink>
       
     </navbar>

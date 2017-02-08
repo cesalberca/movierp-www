@@ -13,6 +13,7 @@ import Providers from './views/Providers';
 import Films from './views/Films';
 import Sessions from './views/Sessions';
 import Orders from './views/Orders';
+import Products from './views/Products';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -33,6 +34,7 @@ ReactDOM.render(
       <Route path="films" component={Films} />
       <Route path="sessions" component={Sessions} />
       <Route path="orders" component={Orders} />
+      <Route path="products" component={Products} />
 
     </Route>
   </Router>,
