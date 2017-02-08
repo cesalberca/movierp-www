@@ -1,18 +1,10 @@
 .FormContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  outline: 0;
-  height: 100%;
-}
-
-.FormContainer__container {
-  box-shadow: var(--box-shadow-default);
-  max-width: 600px;
   background-color: white;
-  padding: var(--spacing-unit);
+  flex-direction: column;
+  box-shadow: var(--box-shadow-default);
+  width: 100%;
+  height: 100%;
 }
 
 .FormContainer__Title{
