@@ -14,12 +14,15 @@ const Navbar = () => {
         <img src={logo} className="Navbar__logo" alt="logo" />
       </IndexLink>
       <NavbarLink to="/cinemas">Cines</NavbarLink>
+      <NavbarLink to="/rooms">Salas</NavbarLink>
+      <NavbarLink to="/sessions">Sesiones</NavbarLink>
       <NavbarLink to="/employees">Empleados</NavbarLink>
       <NavbarLink to="/users">Usuarios</NavbarLink>
-      <NavbarLink to="/rooms">Salas</NavbarLink>
       <NavbarLink to="/clients">Clientes</NavbarLink>
       <NavbarLink to="/providers">Proveedores</NavbarLink>
+      <NavbarLink to="/orders">Pedidos</NavbarLink>
       <NavbarLink to="/films">Películas</NavbarLink>
+      
     </navbar>
   );
 }

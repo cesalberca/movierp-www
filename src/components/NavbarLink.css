@@ -1,5 +1,5 @@
 .NavbarLink {
-  padding: var(--spacing-unit-mini);
+  padding: var(--spacing-unit-mid);
   color: var(--medium-grey);
   text-decoration: none;
   transition: var(--default-transition);

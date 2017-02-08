@@ -1,5 +1,6 @@
 :root {
   --spacing-unit-mini: 1rem;
+  --spacing-unit-mid: 0.5rem;
   --spacing-unit: 2rem;
   --spacing-unit-large: 4rem;
   --default-transition: 0.2s ease all;

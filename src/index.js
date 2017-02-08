@@ -11,6 +11,8 @@ import Rooms from './views/Rooms';
 import Clients from './views/Clients';
 import Providers from './views/Providers';
 import Films from './views/Films';
+import Sessions from './views/Sessions';
+import Orders from './views/Orders';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -29,6 +31,9 @@ ReactDOM.render(
       <Route path="clients" component={Clients} />
       <Route path="providers" component={Providers} />
       <Route path="films" component={Films} />
+      <Route path="sessions" component={Sessions} />
+      <Route path="orders" component={Orders} />
+
     </Route>
   </Router>,
   document.getElementById('root')
