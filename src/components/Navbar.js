@@ -18,6 +18,7 @@ const Navbar = () => {
       <NavbarLink to="/users">Usuarios</NavbarLink>
       <NavbarLink to="/rooms">Salas</NavbarLink>
       <NavbarLink to="/clients">Clientes</NavbarLink>
+      <NavbarLink to="/providers">Proveedores</NavbarLink>
     </navbar>
   );
 }
