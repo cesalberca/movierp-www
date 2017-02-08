@@ -10,7 +10,7 @@ class FormItem extends React.Component {
     render() {
         return (
             <div className="FormItem">
-                <label htmlFor={title} className="FormItem__label">{this.props.title}</label>
+                <label htmlFor={this.props.title} className="FormItem__label">{this.props.title}</label>
                 <input name={this.props.title} className="FormItem__input" type={this.props.inputType} onChange={this.props.onChangeEvent}></input>
             </div>
         )
