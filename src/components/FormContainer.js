@@ -1,7 +1,9 @@
 import React from 'react';
 
 import FormItem from './FormItem';
-import './../stylesheets/formContainer.css'
+
+import './FormContainer.css'
+import './../stylesheets/button.css';
 
 class FormContainer extends React.Component{
     constructor(props){
@@ -91,7 +93,9 @@ class FormContainer extends React.Component{
             <h1 className="FormContainer__Title">{this.state.title}</h1>
             <form className="FormContainer__Form">
                 {this.state.formItems}
-                <input onClick={this.insertNewEntry} className="FormContainer__ActionButton" type="button" value={this.state.actionButtonText} />
+                <div className="FormContainer__container__actionButton">
+                  <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn" type="button" value={this.state.actionButtonText} />
+                </div>
             </form>
         </div>
         );

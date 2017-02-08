@@ -1,18 +1,17 @@
 import React from 'react';
 
-import './../stylesheets/formItem.css'
+import './FormItem.css'
 
 class FormItem extends React.Component {
-
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className="FormItem__MainContainer">
-                <h1 className="FormItem__Title">{this.props.title}</h1>
-                <input name={this.props.title} className="FormItem__Input" type={this.props.inputType} placeholder={this.props.inputPlaceHolder} onChange={this.props.onChangeEvent}></input>
+            <div className="FormItem">
+                <label htmlFor={title} className="FormItem__label">{this.props.title}</label>
+                <input name={this.props.title} className="FormItem__input" type={this.props.inputType} onChange={this.props.onChangeEvent}></input>
             </div>
         )
     }

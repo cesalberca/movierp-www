@@ -1,7 +1,7 @@
 :root {
   --spacing-unit-mini: 1rem;
   --spacing-unit: 2rem;
-  --spacing-unit-large: 5rem;
+  --spacing-unit-large: 4rem;
   --default-transition: 0.2s ease all;
   --long-transition: 1s ease all;
   --navbar-width: 150px;

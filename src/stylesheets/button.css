@@ -1,0 +1,23 @@
+.btn {
+    border: none;
+    padding: 1rem 0.5rem;
+    background-color: var(--primary-color);
+    text-align: center;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    transition: var(--default-transition);
+    transform: translateY(0);
+    outline: 0;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 30px rgb(128, 171, 177);
+}
+
+.btn:active {
+    transform: translateY(2px);
+}

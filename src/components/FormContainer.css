@@ -1,0 +1,30 @@
+.FormContainer__MainContainer {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  padding: var(--spacing-unit-large);
+  box-shadow: var(--box-shadow-default);
+  max-width: 800px;
+}
+
+.FormContainer__Title{
+  padding: var(--spacing-unit-mini);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.FormContainer__Form {
+  width: 100%;
+}
+
+.FormContainer__container__actionButton {
+  margin-top: var(--spacing-unit-mini);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.FormContainer__actionButton {
+  align-self: flex-end;
+  text-align: center;
+}

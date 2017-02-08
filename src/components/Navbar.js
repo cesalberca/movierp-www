@@ -16,6 +16,7 @@ const Navbar = () => {
       <NavbarLink to="/cinemas">Cines</NavbarLink>
       <NavbarLink to="/employees">Empleados</NavbarLink>
       <NavbarLink to="/users">Usuarios</NavbarLink>
+      <NavbarLink to="/rooms">Salas</NavbarLink>
     </navbar>
   );
 }
