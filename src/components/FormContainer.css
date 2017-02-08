@@ -1,10 +1,18 @@
-.FormContainer__MainContainer {
+.FormContainer {
   display: flex;
-  background-color: white;
   flex-direction: column;
-  padding: var(--spacing-unit-large);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  outline: 0;
+  height: 100%;
+}
+
+.FormContainer__container {
   box-shadow: var(--box-shadow-default);
-  max-width: 800px;
+  max-width: 600px;
+  background-color: white;
+  padding: var(--spacing-unit);
 }
 
 .FormContainer__Title{

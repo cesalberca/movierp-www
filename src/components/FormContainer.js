@@ -88,16 +88,18 @@ class FormContainer extends React.Component{
             );
         })
 
-        return(
-            <div className="FormContainer__MainContainer">
-            <h1 className="FormContainer__Title">{this.state.title}</h1>
-            <form className="FormContainer__Form">
-                {this.state.formItems}
-                <div className="FormContainer__container__actionButton">
-                  <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn" type="button" value={this.state.actionButtonText} />
+        return (
+            <div className="FormContainer">
+                <div className="FormContainer__container">
+                    <h1 className="FormContainer__Title">{this.state.title}</h1>
+                    <form className="FormContainer__Form">
+                        {this.state.formItems}
+                        <div className="FormContainer__container__actionButton">
+                        <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn" type="button" value={this.state.actionButtonText} />
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
+            </div>
         );
     }
 }
