@@ -15,6 +15,7 @@ import Sessions from './views/Sessions';
 import Orders from './views/Orders';
 import Products from './views/Products';
 import NotFound from './views/NotFound';
+import CinemaSelection from './views/CinemaSelection';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -38,6 +39,7 @@ ReactDOM.render(
       <Route path="orders" component={Orders}/>
       <Route path="products" component={Products}/>
       <Route path="*" component={NotFound}/>
+      <Route path="cinemaselection" component={CinemaSelection}/>
     </Route>
   </Router>,
   document.getElementById('root')
