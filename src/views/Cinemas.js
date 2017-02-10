@@ -3,6 +3,7 @@ import React from 'react';
 import CinemasList from './../components/CinemasList';
 import FormContainer from './../components/FormContainer';
 import ModalForm from './../components/ModalForm';
+import FormActions from './../components/FormActions';
 
 class Cinemas extends React.Component {
   constructor(props) {
@@ -28,13 +29,13 @@ class Cinemas extends React.Component {
     return (
       <div>
         <h1>Cines</h1>
+        <FormActions onClick={this.handleOpenModal}/>
         <CinemasList />
 
         <ModalForm isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
           <FormContainer targetTable="cinemas" title="New cinema" actionButtonText="Create new cinema"/>
         </ModalForm>
 
-        <button onClick={this.handleOpenModal}>Abrir modal</button>
       </div>
     );
   }

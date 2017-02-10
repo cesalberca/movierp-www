@@ -23,7 +23,7 @@ const Navbar = () => {
       <NavbarLink to="/orders">Pedidos</NavbarLink>
       <NavbarLink to="/products">Productos</NavbarLink>
       <NavbarLink to="/films">Películas</NavbarLink>
-      
+
     </navbar>
   );
 }

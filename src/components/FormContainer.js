@@ -3,7 +3,6 @@ import React from 'react';
 import FormItem from './FormItem';
 
 import './FormContainer.css'
-import './../stylesheets/button.css';
 
 class FormContainer extends React.Component{
     constructor(props){

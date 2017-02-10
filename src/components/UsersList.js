@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TableComponent from './TableComponent';
-import './UsersList.css';
 
 class UsersList extends React.Component {
   constructor(props) {

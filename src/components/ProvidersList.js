@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TableComponent from './TableComponent';
-import './ProvidersList.css';
 
 class ProvidersList extends React.Component {
   constructor(props) {
@@ -33,7 +32,7 @@ class ProvidersList extends React.Component {
        {
         name: 'ID Proveedor',
         field: 'idProveedor'
-      }, 
+      },
       {
         name: 'Nombre comercial',
         field: 'nombre_comerical'

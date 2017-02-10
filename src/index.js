@@ -19,6 +19,7 @@ import './stylesheets/reset.css';
 import './stylesheets/variables.css';
 import './stylesheets/colors.css';
 import './stylesheets/typography.css';
+import './stylesheets/button.css';
 import './index.css';
 
 ReactDOM.render(

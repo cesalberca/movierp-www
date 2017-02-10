@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TableComponent from './TableComponent';
-import './SessionsList.css';
 
 class SessionsList extends React.Component {
   constructor(props) {

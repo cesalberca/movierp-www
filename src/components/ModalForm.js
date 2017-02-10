@@ -13,13 +13,10 @@ class ModalForm extends React.Component {
         return(
             <ReactModal
                 isOpen={this.props.isOpen}
-                contentLabel="Example Modal"
                 className="ModalForm"
                 overlayClassName="ModalForm__overlay"
                 onRequestClose={this.props.handleCloseModal}
-                shouldCloseOnOverlayClick={true}
-                role="dialog"
-            >
+                shouldCloseOnOverlayClick={true}>
                 {this.props.children}
             </ReactModal>
         );

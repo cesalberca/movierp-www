@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TableComponent from './TableComponent';
-import './CinemasList.css';
 
 class CinemasList extends React.Component {
   constructor(props) {

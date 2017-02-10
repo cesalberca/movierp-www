@@ -1,19 +1,28 @@
 .ModalForm {
-    z-index: 9997;
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    right: 20%;
-    bottom: 20%;
+  position: absolute;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  /*Evita que las fuentes salgan blurry*/
+  transform: translate3d(-50%, -50%, 0);
+  /*Hace que se pueda hacer scroll en caso de ser necesario*/
+  overflow-y: auto;
+  /*Previene que se pueda hacer scroll en el body cuando el modal está abierto*/
+  -webkit-overflow-scrolling: touch;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.modal {
+  /*Quita el outline del modal*/
+  outline: none;
 }
 
 .ModalForm__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  /*Muy alto ya que fixe-data-table usa un z-index enorme*/
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.54);
 }
-

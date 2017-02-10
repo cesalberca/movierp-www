@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TableComponent from './TableComponent';
-import './FilmsList.css';
 
 class FilmsList extends React.Component {
   constructor(props) {
@@ -33,7 +32,7 @@ class FilmsList extends React.Component {
        {
         name: 'ID',
         field: 'idPelicula'
-      }, 
+      },
       {
         name: 'Título',
         field: 'nombre'
@@ -47,8 +46,6 @@ class FilmsList extends React.Component {
         field: 'duracion'
       }
     ];
-
-    console.log(this.state.films);
 
     return (
         <TableComponent data={this.state.films} columns={FilmsListColumn} />

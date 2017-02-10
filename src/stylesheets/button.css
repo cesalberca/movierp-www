@@ -1,15 +1,23 @@
 .btn {
     border: none;
-    padding: 1rem 0.5rem;
-    background-color: var(--primary-color);
+    padding: 0.75rem 0.5rem;
     text-align: center;
     border-radius: 3px;
-    color: white;
     font-weight: bold;
     transition: var(--default-transition);
     transform: translateY(0);
     outline: 0;
     font-size: 1rem;
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn--dark {
+    background-color: var(--dark-color);
+    color: var(--primary-color);
 }
 
 .btn:hover {

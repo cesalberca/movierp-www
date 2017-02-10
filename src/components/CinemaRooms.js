@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TableComponent from './TableComponent';
-import './CinemaRooms.css';
 
 class CinemaRooms extends React.Component {
   constructor(props) {
@@ -33,7 +32,7 @@ class CinemaRooms extends React.Component {
        {
         name: 'ID de Cine',
         field: 'idCine'
-      }, 
+      },
       {
         name: 'ID de Sala',
         field: 'idSala'

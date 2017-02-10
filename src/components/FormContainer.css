@@ -3,8 +3,8 @@
   background-color: white;
   flex-direction: column;
   box-shadow: var(--box-shadow-default);
-  width: 100%;
-  height: 100%;
+  padding: var(--spacing-unit);
+  min-width: 400px;
 }
 
 .FormContainer__Title{
