@@ -8,7 +8,7 @@ const ModalForm = ({isOpen, modalTitle, handleCloseModal, children}) => {
   return(
     <ReactModal
       isOpen={isOpen}
-      contentLabel={modalTitle}
+      contentLabel={modalTitle || 'Modal'}
       className="ModalForm"
       overlayClassName="ModalForm__overlay"
       onRequestClose={handleCloseModal}
