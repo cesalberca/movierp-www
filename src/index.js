@@ -14,6 +14,7 @@ import Films from './views/Films';
 import Sessions from './views/Sessions';
 import Orders from './views/Orders';
 import Products from './views/Products';
+import CinemaSelection from './views/CinemaSelection';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -35,7 +36,7 @@ ReactDOM.render(
       <Route path="sessions" component={Sessions} />
       <Route path="orders" component={Orders} />
       <Route path="products" component={Products} />
-
+      <Route path="cinemaselection" component={CinemaSelection}/>
     </Route>
   </Router>,
   document.getElementById('root')
