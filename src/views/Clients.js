@@ -5,7 +5,7 @@ import FormContainer from './../components/FormContainer';
 import FormActions from './../components/FormActions';
 
 const Client = () => {
-  return (
+  return(
     <div>
       <h1>Clientes</h1>
       <Clients/>

@@ -20,7 +20,7 @@ class Orders extends React.Component {
     this.setState({isOpen: true})
   }
 
-  handleCloseModal () {
+  handleCloseModal() {
       this.setState({isOpen: false});
   }
 

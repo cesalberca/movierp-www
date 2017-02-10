@@ -14,6 +14,7 @@ import Films from './views/Films';
 import Sessions from './views/Sessions';
 import Orders from './views/Orders';
 import Products from './views/Products';
+import NotFound from './views/NotFound';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -25,18 +26,18 @@ import './index.css';
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="cinemas" component={Cinemas} />
-      <Route path="employees" component={Employees} />
-      <Route path="users" component={Users} />
-      <Route path="rooms" component={Rooms} />
-      <Route path="clients" component={Clients} />
-      <Route path="providers" component={Providers} />
-      <Route path="films" component={Films} />
-      <Route path="sessions" component={Sessions} />
-      <Route path="orders" component={Orders} />
-      <Route path="products" component={Products} />
-
+      <IndexRoute component={Home}/>
+      <Route path="cinemas" component={Cinemas}/>
+      <Route path="employees" component={Employees}/>
+      <Route path="users" component={Users}/>
+      <Route path="rooms" component={Rooms}/>
+      <Route path="clients" component={Clients}/>
+      <Route path="providers" component={Providers}/>
+      <Route path="films" component={Films}/>
+      <Route path="sessions" component={Sessions}/>
+      <Route path="orders" component={Orders}/>
+      <Route path="products" component={Products}/>
+      <Route path="*" component={NotFound}/>
     </Route>
   </Router>,
   document.getElementById('root')
