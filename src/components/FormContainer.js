@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { insert } from './../utils/apiHelper';
 import FormItem from './FormItem';
 
 import './FormContainer.css'
@@ -44,29 +45,31 @@ class FormContainer extends React.Component{
     let changedValues = {};
     changedValues[e.target.name] = e.target.value;
     const updatedItems = Object.assign(this.state.formItemsValues, changedValues);
-    // console.log(updatedItems);
   }
 
   insertNewEntry() {
-    let objectToInsert = {};
     const body = this.state.formItemsValues;
-    fetch('http://localhost:8080/api/' + this.props.targetTable, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(
-        body
-      )
-    })
-    .then((response) => {
-      return response.json();
-    })
-    .then((json) => {
-      console.log(json);
-    })
-    .catch((error) => {
-    });
+
+    insert(this.props.targetTable, body)
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
+    // fetch('http://localhost:8080/api/' + this.props.targetTable, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(
+    //     body
+    //   )
+    // })
+    // .then((response) => {
+    //   return response.json();
+    // })
+    // .then((json) => {
+    //   console.log(json);
+    // })
+    // .catch((error) => {
+    // });
   }
 
   render() {
