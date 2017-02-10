@@ -45,6 +45,7 @@ class FormContainer extends React.Component{
     let changedValues = {};
     changedValues[e.target.name] = e.target.value;
     const updatedItems = Object.assign(this.state.formItemsValues, changedValues);
+    this.setState({formItemsValues: updatedItems})
   }
 
   insertNewEntry() {
@@ -53,27 +54,10 @@ class FormContainer extends React.Component{
     insert(this.props.targetTable, body)
     .then(response => console.log(response))
     .catch(error => console.log(error));
-    // fetch('http://localhost:8080/api/' + this.props.targetTable, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(
-    //     body
-    //   )
-    // })
-    // .then((response) => {
-    //   return response.json();
-    // })
-    // .then((json) => {
-    //   console.log(json);
-    // })
-    // .catch((error) => {
-    // });
   }
 
   render() {
-    this.state.formItems = this.state.tableColumns.map((column, index) => {
+    const formItemsList = this.state.tableColumns.map((column, index) => {
       return(
         <FormItem label={column.name} onChangeEvent={this.formItemsOnChange} key={index} inputName={column.name} inputType="text"/>
       );
@@ -84,7 +68,7 @@ class FormContainer extends React.Component{
         <div className="FormContainer__container">
           <h1 className="FormContainer__Title">{this.state.title}</h1>
           <form className="FormContainer__Form">
-            {this.state.formItems}
+            {formItemsList}
             <div className="FormContainer__container__actionButton">
               <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn btn--primary" type="button" value={this.state.actionButtonText} />
             </div>

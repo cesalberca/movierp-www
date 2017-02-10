@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Clients from './../components/Clients';
+import ClientsList from './../components/ClientsList';
 import FormContainer from './../components/FormContainer';
 import FormActions from './../components/FormActions';
 
-const Client = () => {
+const Clients = () => {
   return(
     <div>
       <h1>Clientes</h1>
-      <Clients/>
+      <ClientsList/>
       <FormContainer targetTable="clients" title="New client" actionButtonText="Create new client"/>
       <FormActions/>
     </div>

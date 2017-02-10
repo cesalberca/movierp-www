@@ -2,7 +2,7 @@ import React from 'react';
 
 import TableComponent from './TableComponent';
 
-class Clients extends React.Component {
+class ClientsList extends React.Component {
   constructor(props) {
     super(props);
 
@@ -57,4 +57,4 @@ class Clients extends React.Component {
   }
 }
 
-export default Clients;
+export default ClientsList;
