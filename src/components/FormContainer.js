@@ -1,4 +1,5 @@
 import React from 'react';
+import swal from 'sweetalert2';
 
 import { insert } from './../utils/apiHelper';
 import FormItem from './FormItem';
@@ -52,7 +53,9 @@ class FormContainer extends React.Component{
     const body = this.state.formItemsValues;
 
     insert(this.props.targetTable, body)
-    .then(response => console.log(response))
+    .then(() => {
+      swal({title: 'Éxito', type: 'success'});
+    })
     .catch(error => console.log(error));
   }
 
