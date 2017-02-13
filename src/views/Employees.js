@@ -45,7 +45,7 @@ this.Column = [
   componentDidMount() {
     selectAll('employees')
     .then((response) => {
-      this.setState({employees: response._embedded.employees})
+      this.setState({employees: response})
     });
   }
 
@@ -58,7 +58,10 @@ this.Column = [
   }
 
   refresh() {
-
+    selectAll('empleados')
+      .then((response) => {
+        this.setState({employees: response})
+      });
   }
 
 render() {

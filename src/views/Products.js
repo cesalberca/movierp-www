@@ -1,40 +1,73 @@
 import React from 'react';
 
-import ProductsList from './../components/ProductsList';
+import { selectAll } from './../utils/apiHelper';
+
+import TableComponent from './../components/TableComponent';
 import FormContainer from './../components/FormContainer';
 import ModalForm from './../components/ModalForm';
+import FormActions from './../components/FormActions';
+
 
 class Products extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      products: [],
       isOpen: false
-    }
+    };
+
+    this.columns = [
+      {
+        name: 'ID',
+        field: 'idProducto'
+      },
+      {
+        name: 'Nombre',
+        field: 'nombre'
+      },
+      {
+        name: 'Precio',
+        field: 'precio'
+      }
+    ];
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.refresh = this.refresh.bind(this);
   }
 
-  handleOpenModal(e) {
-    this.setState({isOpen: true})
+  componentDidMount() {
+    this.refresh();
   }
 
-  handleCloseModal () {
-      this.setState({isOpen: false});
+  handleOpenModal() {
+    this.setState({isOpen: true});
+  }
+
+  handleCloseModal() {
+    this.setState({isOpen: false});
+  }
+
+  refresh() {
+    selectAll('products')
+    .then((response) => {
+      this.setState({products: response})
+    });
   }
 
   render() {
     return (
       <div>
         <h1>Productos</h1>
-        <ProductsList />
 
-        <ModalForm isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="products" title="New product" actionButtonText="Create new product"/>
+        <FormActions handleOpenModal={this.handleOpenModal} refresh={this.refresh}/>
+
+        <TableComponent data={this.state.products} columns={this.columns} />
+
+        <ModalForm modalTitle="Modal productos" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
+          <FormContainer targetTable="Productos" title="New productos" actionButtonText="Crear nuevo producto"/>
         </ModalForm>
-
-        <button onClick={this.handleOpenModal}>Abrir modal</button>
       </div>
     );
   }
