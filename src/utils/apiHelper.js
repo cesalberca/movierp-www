@@ -20,7 +20,7 @@ export function insert(table, item) {
     })
     .then((response) => {
       if (response.ok) {
-        resolve(response);
+        resolve(response.json());
       } else {
         reject(response.error);
       }
@@ -28,14 +28,20 @@ export function insert(table, item) {
   })
 }
 
+/**
+ * Retrieves a list of all elements given a table
+ */
 export function selectAll(table) {
-  fetch(`${apiPath}/${table}`, {
-    method: 'GET'
-  })
-  .then((response) => {
-    return response.json();
-  })
-  .then((json) => {
-    this.setState({rooms: json._embedded.rooms});
+  return new Promise((resolve, reject) => {
+    fetch(`${apiPath}/${table}`, {
+      method: 'GET'
+    })
+    .then((response) => {
+      if (response.ok) {
+        resolve(response.json());
+      } else {
+        reject(response.error);
+      }
+    });
   });
 }
