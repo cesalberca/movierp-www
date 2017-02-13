@@ -24,8 +24,8 @@ export function insert(table, item) {
       } else {
         reject(response.error);
       }
-    })
-  })
+    });
+  });
 }
 
 /**
@@ -37,11 +37,10 @@ export function selectAll(table) {
       method: 'GET'
     })
     .then((response) => {
-      if (response.ok) {
-        resolve(response.json());
-      } else {
-        reject(response.error);
-      }
+      response.json()
+      .then(json => {
+        resolve(json._embedded[table])
+      });
     });
   });
 }

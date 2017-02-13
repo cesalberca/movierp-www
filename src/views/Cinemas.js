@@ -46,10 +46,7 @@ class Cinemas extends React.Component {
   }
 
   componentDidMount() {
-    selectAll('cinemas')
-    .then((response) => {
-      this.setState({cinemas: response._embedded.cinemas})
-    });
+    this.refresh();
   }
 
   handleOpenModal() {
@@ -61,7 +58,10 @@ class Cinemas extends React.Component {
   }
 
   refresh() {
-
+    selectAll('cinemas')
+    .then((response) => {
+      this.setState({cinemas: response})
+    });
   }
 
   render() {
