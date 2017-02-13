@@ -45,4 +45,19 @@ export function selectAll(table) {
   });
 }
 
+/**
+ * Deletes one resource from a table given an id
+ */
+export function deleteOne(table, id) {
+  return new Promise((resolve, reject) => {
+    fetch(`${apiPath}/${table}/${id}`, {
+      method: 'DELETE'
+    })
+    .then((response) => {
+      resolve(response.json());
+    })
+  })
+
+}
+
 
