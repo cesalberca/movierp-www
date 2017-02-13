@@ -38,7 +38,6 @@ ReactDOM.render(
       <Route path="sessions" component={Sessions}/>
       <Route path="orders" component={Orders}/>
       <Route path="products" component={Products}/>
-      <Route path="*" component={NotFound}/>
       <Route path="cinemaselection" component={CinemaSelection}/>
     </Route>
   </Router>,

@@ -45,7 +45,7 @@ this.Column = [
   componentDidMount() {
     selectAll('employees')
     .then((response) => {
-      this.setState({employees: response._embedded.employees})
+      this.setState({employees: response})
     });
   }
 
@@ -58,7 +58,10 @@ this.Column = [
   }
 
   refresh() {
-
+    selectAll('empleados')
+      .then((response) => {
+        this.setState({employees: response})
+      });
   }
 
 render() {
@@ -71,7 +74,7 @@ render() {
         <TableComponent data={this.state.employees} columns={this.Column} />
 
         <ModalForm modalTitle="Modal empleado" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="p" title="Nuevo empleado" actionButtonText="Crear nuevo empleado"/>
+          <FormContainer targetTable="employees" title="Nuevo empleado" actionButtonText="Crear nuevo empleado"/>
         </ModalForm>
       </div>
     );

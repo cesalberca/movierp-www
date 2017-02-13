@@ -1,8 +1,10 @@
 import React from 'react';
 
-const CinemaSelectionItem = ({cinemaSelectionItemName, cinemaSelectionItemAddress, CinemaSelectionItemOnClickEvent}) => {
+import './CinemaSelectionItem.css';
+
+const CinemaSelectionItem = ({cinemaSelectionItemName, cinemaSelectionItemAddress, cinemaSelectionItemOnClickEvent, cinemaSelectionId}) => {
   return(
-    <div onClick={CinemaSelectionItemOnClickEvent}>
+    <div className="CinemaSelectionItem" onClick={cinemaSelectionItemOnClickEvent}>
       <p>{cinemaSelectionItemName}</p>
       <p>{cinemaSelectionItemAddress}</p>
     </div>
