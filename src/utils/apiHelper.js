@@ -54,10 +54,13 @@ export function deleteOne(table, id) {
       method: 'DELETE'
     })
     .then((response) => {
-      resolve(response.json());
-    })
-  })
-
+      if (response.ok) {
+        resolve();
+      } else {
+        reject(response);
+      }
+    });
+  });
 }
 
 

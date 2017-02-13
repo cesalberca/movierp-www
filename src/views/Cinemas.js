@@ -107,7 +107,7 @@ class Cinemas extends React.Component {
           modalTitle="Borrar cine"
           isOpen={this.state.isDeleteOpen}
           handleCloseModal={this.handleCloseDeleteModal}>
-          <DeleteForm title="Borrar cine" actionButtonText="Borrar cine"/>
+          <DeleteForm targetTable="cinemas" title="Borrar cine" actionButtonText="Borrar cine"/>
         </ModalForm>
       </div>
     );

@@ -23,6 +23,7 @@ import './stylesheets/colors.css';
 import './stylesheets/typography.css';
 import './stylesheets/button.css';
 import './stylesheets/form.css';
+import './../node_modules/sweetalert/dist/sweetalert.css';
 import './index.css';
 
 ReactDOM.render(

@@ -1,5 +1,5 @@
 import React from 'react';
-import swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 import { insert } from './../utils/apiHelper';
 import FormItem from './FormItem';
@@ -66,15 +66,13 @@ class FormContainer extends React.Component{
 
     return (
       <div className="FormContainer">
-        <div className="FormContainer__container">
-          <h1 className="FormContainer__Title">{this.state.title}</h1>
-          <form className="FormContainer__Form">
-            {formItemsList}
-            <div className="FormContainer__container__actionButton">
-              <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn btn--primary" type="button" value={this.state.actionButtonText} />
-            </div>
-          </form>
-        </div>
+        <h1 className="FormContainer__Title">{this.state.title}</h1>
+        <form className="FormContainer__Form">
+          {formItemsList}
+          <div className="FormContainer__container__actionButton">
+            <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn btn--primary" type="button" value={this.state.actionButtonText} />
+          </div>
+        </form>
       </div>
     );
   }
