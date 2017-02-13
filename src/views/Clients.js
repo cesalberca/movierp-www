@@ -14,7 +14,7 @@ class Clients extends React.Component {
       clients: []
     };
 
-this.clientsColumn = [
+this.Column = [
       {
         name: 'ID',
         field: 'idCliente'
@@ -68,10 +68,10 @@ render() {
 
         <FormActions handleOpenModal={this.handleOpenModal} refresh={this.refresh}/>
 
-        <TableComponent data={this.state.clients} columns={this.clientsColumn} />
+        <TableComponent data={this.state.clients} columns={this.Column} />
 
         <ModalForm modalTitle="Modal cines" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="p" title="Nueva pelicula" actionButtonText="Crear nueva pelicula"/>
+          <FormContainer targetTable="p" title="Nueva cliente" actionButtonText="Crear nuevo cliente"/>
         </ModalForm>
       </div>
     );
