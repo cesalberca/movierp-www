@@ -14,7 +14,8 @@ class Cinemas extends React.Component {
 
     this.state = {
       cinemas: [],
-      isOpen: false
+      isCreateOpen: false,
+      isDeleteOpen: false
     };
 
     this.columns = [
@@ -40,8 +41,10 @@ class Cinemas extends React.Component {
       }
     ];
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOpenCreateModal = this.handleOpenCreateModal.bind(this);
+    this.handleCloseCreateModal = this.handleCloseCreateModal.bind(this);
+    this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
+    this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
     this.refresh = this.refresh.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -50,16 +53,28 @@ class Cinemas extends React.Component {
     this.refresh();
   }
 
-  handleOpenModal() {
-    this.setState({isOpen: true});
+  handleOpenCreateModal() {
+    this.setState({isCreateOpen: true});
   }
 
-  handleCloseModal() {
-    this.setState({isOpen: false});
+  handleCloseCreateModal() {
+    this.setState({isCreateOpen: false});
+  }
+
+  handleOpenDeleteModal() {
+    this.setState({isDeleteOpen: true});
+  }
+
+  handleCloseDeleteModal() {
+    this.setState({isDeleteOpen: false});
   }
 
   handleDelete() {
     console.log('Borrar');
+  }
+
+  create() {
+
   }
 
   refresh() {
@@ -74,18 +89,18 @@ class Cinemas extends React.Component {
       <div>
         <h1>Cines</h1>
         <FormActions
-          handleOpenModal={this.handleOpenModal}
-          refresh={this.refresh}
-          handleDelete={this.handleDelete}/>
+          handleOpenCreateModal={this.handleOpenCreateModal}
+          handleOpenDeleteModal={this.handleOpenDeleteModal}
+          refresh={this.refresh}/>
 
         <TableComponent data={this.state.cinemas} columns={this.columns} />
 
-        <ModalForm modalTitle="Modal cines" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
+        <ModalForm modalTitle="Modal cines" isOpen={this.state.isCreateOpen} handleCloseModal={this.handleCloseCreateModal}>
           <FormContainer targetTable="cinemas" title="Nuevo cine" actionButtonText="Crear cine"/>
         </ModalForm>
 
-        <ModalForm modalTitle="Borrar cine" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="cinemas" title="New cinema" actionButtonText="Borrar cine"/>
+        <ModalForm modalTitle="Borrar cine" isOpen={this.state.isDeleteOpen} handleCloseModal={this.handleCloseDeleteModal}>
+          Borrar
         </ModalForm>
       </div>
     );
