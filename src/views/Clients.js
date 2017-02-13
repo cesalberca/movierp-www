@@ -71,7 +71,7 @@ render() {
         <TableComponent data={this.state.clients} columns={this.Column} />
 
         <ModalForm modalTitle="Modal cines" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="p" title="Nuevo cliente" actionButtonText="Crear nuevo cliente"/>
+          <FormContainer targetTable="clients" title="Nuevo cliente" actionButtonText="Crear nuevo cliente"/>
         </ModalForm>
       </div>
     );

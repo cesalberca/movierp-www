@@ -74,7 +74,7 @@ class Cinemas extends React.Component {
         <TableComponent data={this.state.cinemas} columns={this.columns} />
 
         <ModalForm modalTitle="Modal cines" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="Cines" title="Nuevo Cine" actionButtonText="Crear nuevo cine"/>
+          <FormContainer targetTable="cinemas" title="Nuevo Cine" actionButtonText="Crear nuevo cine"/>
         </ModalForm>
       </div>
     );

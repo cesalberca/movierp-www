@@ -66,7 +66,7 @@ class Products extends React.Component {
         <TableComponent data={this.state.products} columns={this.columns} />
 
         <ModalForm modalTitle="Modal productos" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="Productos" title="New productos" actionButtonText="Crear nuevo producto"/>
+          <FormContainer targetTable="products" title="New productos" actionButtonText="Crear nuevo producto"/>
         </ModalForm>
       </div>
     );
