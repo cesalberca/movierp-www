@@ -4,8 +4,6 @@ import swal from 'sweetalert2';
 import { insert } from './../utils/apiHelper';
 import FormItem from './FormItem';
 
-import './FormContainer.css'
-
 class FormContainer extends React.Component{
   constructor(props){
     super(props);

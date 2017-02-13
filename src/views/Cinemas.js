@@ -5,6 +5,7 @@ import { insert, selectAll, deleteOne } from './../utils/apiHelper';
 import TableComponent from './../components/TableComponent';
 import FormContainer from './../components/FormContainer';
 import ModalForm from './../components/ModalForm';
+import DeleteForm from './../components/DeleteForm';
 import FormActions from './../components/FormActions';
 
 
@@ -95,12 +96,18 @@ class Cinemas extends React.Component {
 
         <TableComponent data={this.state.cinemas} columns={this.columns} />
 
-        <ModalForm modalTitle="Modal cines" isOpen={this.state.isCreateOpen} handleCloseModal={this.handleCloseCreateModal}>
+        <ModalForm
+          modalTitle="Crear cine"
+          isOpen={this.state.isCreateOpen}
+          handleCloseModal={this.handleCloseCreateModal}>
           <FormContainer targetTable="cinemas" title="Nuevo cine" actionButtonText="Crear cine"/>
         </ModalForm>
 
-        <ModalForm modalTitle="Borrar cine" isOpen={this.state.isDeleteOpen} handleCloseModal={this.handleCloseDeleteModal}>
-          Borrar
+        <ModalForm
+          modalTitle="Borrar cine"
+          isOpen={this.state.isDeleteOpen}
+          handleCloseModal={this.handleCloseDeleteModal}>
+          <DeleteForm title="Borrar cine" actionButtonText="Borrar cine"/>
         </ModalForm>
       </div>
     );
