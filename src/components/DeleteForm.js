@@ -11,14 +11,14 @@ class DeleteForm extends React.Component {
 
     this.state = {
       id: ''
-    }
+    };
 
     this.delete = this.delete.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   handleOnChange(e) {
-    this.setState({id:  e.target.value})
+    this.setState({id:  e.target.value});
   }
 
   delete() {
