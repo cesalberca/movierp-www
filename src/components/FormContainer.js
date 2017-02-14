@@ -49,9 +49,10 @@ class FormContainer extends React.Component{
     insert(this.props.targetTable, this.state.formItemsValues)
     .then(() => {
       swal({title: 'Entrada creada', type: 'success'});
+      this.props.onSubmit();
     })
     .catch(error => {
-      swal({title: 'Error al crear entrada', type: 'error'});
+      swal({title: 'Error al crear entrada. Revisa los campos', type: 'error'});
     });
   }
 
@@ -69,7 +70,7 @@ class FormContainer extends React.Component{
         <form className="FormContainer__Form">
           {formItemsList}
           <div className="FormContainer__container__actionButton">
-            <input onClick={this.insertNewEntry} className="FormContainer__actionButton btn btn--primary" type="button" value={actionButtonText}/>
+            <input type="button" onClick={this.insertNewEntry} className="FormContainer__actionButton btn btn--primary" value={actionButtonText}/>
           </div>
         </form>
       </div>

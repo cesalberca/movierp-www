@@ -46,6 +46,7 @@ class Cinemas extends React.Component {
     this.handleCloseCreateModal = this.handleCloseCreateModal.bind(this);
     this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
     this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.load = this.load.bind(this);
   }
 
@@ -78,6 +79,11 @@ class Cinemas extends React.Component {
     });
   }
 
+  onSubmit() {
+    this.load();
+    this.handleCloseCreateModal();
+  }
+
   render() {
     return (
       <div>
@@ -94,7 +100,7 @@ class Cinemas extends React.Component {
           modalTitle="Crear cine"
           isOpen={this.state.isCreateOpen}
           handleCloseModal={this.handleCloseCreateModal}>
-          <FormContainer targetTable="cinemas" title="Nuevo cine" actionButtonText="Crear cine"/>
+          <FormContainer onSubmit={this.onSubmit} targetTable="cinemas" title="Nuevo cine" actionButtonText="Crear cine"/>
         </ModalForm>
 
         <ModalForm
