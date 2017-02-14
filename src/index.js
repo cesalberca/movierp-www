@@ -41,6 +41,7 @@ ReactDOM.render(
       <Route path="orders" component={Orders}/>
       <Route path="products" component={Products}/>
       <Route path="cinemaselection" component={CinemaSelection}/>
+      <Route path="*" component={NotFound}/>
     </Route>
   </Router>,
   document.getElementById('root')
