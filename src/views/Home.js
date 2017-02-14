@@ -1,5 +1,4 @@
 import React from 'react';
-import swal from 'sweetalert';
 
 class Home extends React.Component {
   render() {
