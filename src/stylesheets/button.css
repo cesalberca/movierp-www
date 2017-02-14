@@ -23,7 +23,7 @@
 .btn:hover {
     cursor: pointer;
     transform: translateY(-2px);
-    box-shadow: 0px 10px 30px rgb(128, 171, 177);
+    box-shadow: 0px 10px 30px var(--medium-grey);
 }
 
 .btn:active {
