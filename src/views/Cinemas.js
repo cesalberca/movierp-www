@@ -8,13 +8,13 @@ import ModalForm from './../components/ModalForm';
 import DeleteForm from './../components/DeleteForm';
 import FormActions from './../components/FormActions';
 
-
 class Cinemas extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       cinemas: [],
+      isLoading: false,
       isCreateOpen: false,
       isDeleteOpen: false
     };
@@ -46,12 +46,11 @@ class Cinemas extends React.Component {
     this.handleCloseCreateModal = this.handleCloseCreateModal.bind(this);
     this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
     this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
-    this.refresh = this.refresh.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.load = this.load.bind(this);
   }
 
   componentDidMount() {
-    this.refresh();
+    this.load();
   }
 
   handleOpenCreateModal() {
@@ -70,18 +69,12 @@ class Cinemas extends React.Component {
     this.setState({isDeleteOpen: false});
   }
 
-  handleDelete() {
-    console.log('Borrar');
-  }
-
-  create() {
-
-  }
-
-  refresh() {
+  load() {
+    this.setState({isLoading: true});
     selectAll('cinemas')
     .then((response) => {
-      this.setState({cinemas: response})
+      this.setState({cinemas: response});
+      this.setState({isLoading: false});
     });
   }
 
@@ -90,11 +83,12 @@ class Cinemas extends React.Component {
       <div>
         <h1>Cines</h1>
         <FormActions
+          isLoading={this.state.isLoading}
           handleOpenCreateModal={this.handleOpenCreateModal}
           handleOpenDeleteModal={this.handleOpenDeleteModal}
-          refresh={this.refresh}/>
+          handleLoad={this.load}/>
 
-        <TableComponent data={this.state.cinemas} columns={this.columns} />
+        <TableComponent data={this.state.cinemas} columns={this.columns}/>
 
         <ModalForm
           modalTitle="Crear cine"
