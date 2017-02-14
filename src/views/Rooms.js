@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { insert, selectAll, deleteOne } from './../utils/apiHelper';
+import { selectAll } from './../utils/apiHelper';
 
 import TableComponent from './../components/TableComponent';
 import FormContainer from './../components/FormContainer';
