@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 
-import { insert, getColumnData } from './../utils/apiHelper';
+import { update, getColumnData } from './../utils/apiHelper';
 import FormItem from './FormItem';
 
 class EditForm extends React.Component {
@@ -15,6 +15,7 @@ class EditForm extends React.Component {
 
     this.handleOnChange = this.handleOnChange.bind(this);
     this.loadFormItems = this.loadFormItems.bind(this);
+    this.updateEntry = this.updateEntry.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +36,17 @@ class EditForm extends React.Component {
     })
     .catch((error) => {
       swal({title: 'Error al conseguir los campos de la base de datos', type: 'error'})
+    });
+  }
+
+  updateEntry() {
+    update(this.props.targetTable, this.props.data._links.self.href, this.state.formItemsValues)
+    .then(() => {
+      swal({title: 'Entrada actualizada', type: 'success'});
+      this.props.onSubmit();
+    })
+    .catch((error) => {
+      swal({title: 'Error al actualizar la entrada. Revisa los campos', type: 'error'});
     });
   }
 
@@ -59,7 +71,7 @@ class EditForm extends React.Component {
         <form className="FormContainer__Form">
           {formItemsList}
           <div className="FormContainer__container__actionButton">
-            <input type="button" onClick={this.insertNewEntry} className="FormContainer__actionButton btn btn--primary" value={actionButtonText}/>
+            <input type="button" onClick={this.updateEntry} className="FormContainer__actionButton btn btn--primary" value={actionButtonText}/>
           </div>
         </form>
       </div>
