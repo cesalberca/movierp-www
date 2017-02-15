@@ -7,6 +7,7 @@ import TableComponent from './../components/TableComponent';
 import FormContainer from './../components/FormContainer';
 import ModalForm from './../components/ModalForm';
 import DeleteForm from './../components/DeleteForm';
+import EditForm from './../components/EditForm';
 import FormActions from './../components/FormActions';
 
 class Cinemas extends React.Component {
@@ -15,9 +16,11 @@ class Cinemas extends React.Component {
 
     this.state = {
       cinemas: [],
+      selectedCinema: '',
       isLoading: false,
       isCreateOpen: false,
-      isDeleteOpen: false
+      isDeleteOpen: false,
+      isEditOpen: false
     };
 
     this.columns = [
@@ -47,8 +50,11 @@ class Cinemas extends React.Component {
     this.handleCloseCreateModal = this.handleCloseCreateModal.bind(this);
     this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
     this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
+    this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
+    this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.load = this.load.bind(this);
+    this.handleRowClick = this.handleRowClick.bind(this);
   }
 
   componentDidMount() {
@@ -69,6 +75,20 @@ class Cinemas extends React.Component {
 
   handleCloseDeleteModal() {
     this.setState({isDeleteOpen: false});
+  }
+
+  handleOpenEditModal() {
+    this.setState({isEditOpen: true});
+  }
+
+  handleCloseEditModal() {
+    this.setState({isEditOpen: false});
+  }
+
+  handleRowClick(event, index) {
+    const selectedCinema = this.state.cinemas[index];
+    this.setState({selectedCinema});
+    this.handleOpenEditModal(this.state.selectedCinema);
   }
 
   load() {
@@ -99,7 +119,10 @@ class Cinemas extends React.Component {
           handleOpenDeleteModal={this.handleOpenDeleteModal}
           handleLoad={this.load}/>
 
-        <TableComponent data={this.state.cinemas} columns={this.columns}/>
+        <TableComponent 
+          data={this.state.cinemas} 
+          columns={this.columns}
+          handleRowClick={this.handleRowClick}/>
 
         <ModalForm
           modalTitle="Crear cine"
@@ -113,6 +136,13 @@ class Cinemas extends React.Component {
           isOpen={this.state.isDeleteOpen}
           handleCloseModal={this.handleCloseDeleteModal}>
           <DeleteForm targetTable="cinemas" title="Borrar cine" actionButtonText="Borrar cine"/>
+        </ModalForm>
+
+        <ModalForm
+          modalTitle="Editar cine"
+          isOpen={this.state.isEditOpen}
+          handleCloseModal={this.handleCloseEditModal}>
+          <EditForm targetTable="cinemas" title="Editar cine" actionButtonText="Editar cine"/>
         </ModalForm>
       </div>
     );

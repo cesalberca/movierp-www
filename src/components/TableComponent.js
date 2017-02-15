@@ -26,7 +26,7 @@ class TableComponent extends React.Component {
         headerHeight={50}
         width={containerWidth}
         height={containerHeight}
-        >
+        onRowClick={this.props.handleRowClick}>
           {columnsList}
       </Table>
     );
