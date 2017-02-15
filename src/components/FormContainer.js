@@ -10,7 +10,6 @@ class FormContainer extends React.Component{
 
     this.state = {
       tableColumns: [],
-      formItems: [],
       formItemsValues: {}
     };
 
@@ -54,7 +53,13 @@ class FormContainer extends React.Component{
   render() {
     const formItemsList = this.state.tableColumns.map((column, index) => {
       return(
-        <FormItem label={column.name} onChangeEvent={this.handleOnChange} key={index} inputName={column.name} inputType="text"/>
+        <FormItem 
+          label={column.name}
+          onChangeEvent={this.handleOnChange}
+          key={index}
+          value={this.state.formItemsValues[column.name]}
+          inputName={column.name}
+          inputType="text"/>
       );
     });
 
