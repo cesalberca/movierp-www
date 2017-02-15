@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 
-import { update, getColumnData } from './../utils/apiHelper';
+import { update, getColumnData, getSelf } from './../utils/apiHelper';
 import FormItem from './FormItem';
 
 class EditForm extends React.Component {
@@ -40,7 +40,8 @@ class EditForm extends React.Component {
   }
 
   updateEntry() {
-    update(this.props.targetTable, this.props.data._links.self.href, this.state.formItemsValues)
+    const self = getSelf(this.props.data);
+    update(this.props.targetTable, self, this.state.formItemsValues)
     .then(() => {
       swal({title: 'Entrada actualizada', type: 'success'});
       this.props.onSubmit();
