@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import { insert, getColumnData } from './../utils/apiHelper';
 import FormItem from './FormItem';
 
+//TODO Somehow initialize an unknown number of fields to empty
 class FormContainer extends React.Component{
   constructor(props){
     super(props);
@@ -55,10 +56,10 @@ class FormContainer extends React.Component{
       return(
         <FormItem 
           label={column.name}
-          onChangeEvent={this.handleOnChange}
           key={index}
-          value={this.state.formItemsValues[column.name]}
+          onChangeEvent={this.handleOnChange}
           inputName={column.name}
+          value={this.state.formItemsValues[column.name]}
           inputType="text"/>
       );
     });

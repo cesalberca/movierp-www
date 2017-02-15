@@ -44,9 +44,9 @@ class EditForm extends React.Component {
       return(
         <FormItem 
           label={column.name}
-          inputName={column.name}
-          onChangeEvent={this.handleOnChange}
           key={index}
+          onChangeEvent={this.handleOnChange}
+          inputName={column.name}
           value={this.state.formItemsValues[column.name]}
           inputType="text"/>
       );
