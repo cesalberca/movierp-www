@@ -30,8 +30,11 @@ export function insert(resource, item) {
 
 export function update(resource, id, updatedResource) {
   return new Promise((resolve, reject) => {
-    fetch(`${apiPath}/${resource}/${id}`, {
-      method: 'PUT',
+    fetch(id, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(updatedResource)
     })
     .then(response => {
