@@ -1,4 +1,5 @@
 import React from 'react';
+import swal from 'sweetalert';
 
 import { selectAll } from './../utils/apiHelper';
 
@@ -75,6 +76,10 @@ class Cinemas extends React.Component {
     selectAll('cinemas')
     .then((response) => {
       this.setState({cinemas: response});
+      this.setState({isLoading: false});
+    })
+    .catch(error => {
+      swal({title: 'No se ha podido conectar con el servidor, inténtalo en otro momento', type: 'error'});
       this.setState({isLoading: false});
     });
   }
