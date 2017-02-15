@@ -18,7 +18,7 @@ export function insert(table, item) {
       },
       body: JSON.stringify(item)
     })
-    .then((response) => {
+    .then(response => {
       if (response.ok) {
         resolve(response.json());
       } else {
@@ -36,11 +36,15 @@ export function selectAll(table) {
     fetch(`${apiPath}/${table}`, {
       method: 'GET'
     })
-    .then((response) => {
-      response.json()
-      .then(json => {
-        resolve(json._embedded[table])
-      });
+    .then(response => {
+      if (response.ok) {
+        response.json()
+        .then(json => {
+          resolve(json._embedded[table])
+        });
+      } else {
+        reject(response.error);
+      }
     });
   });
 }
