@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 
-import { insert } from './../utils/apiHelper';
+import { insert, getColumnData } from './../utils/apiHelper';
 import FormItem from './FormItem';
 
 class FormContainer extends React.Component{
@@ -24,17 +24,12 @@ class FormContainer extends React.Component{
   }
 
   loadFormItems() {
-    fetch('http://localhost:8080/api/profile/' + this.props.targetTable, {
-      method: 'GET'
-    })
+    getColumnData(this.props.targetTable)
     .then((response) => {
-      return response.json();
-    })
-    .then((json) => {
-      const tableColumns = json.alps.descriptors[0].descriptors;
-      this.setState({tableColumns});
+      this.setState({tableColumns: response});
     })
     .catch((error) => {
+      swal({title: 'Error al conseguir los campos de la base de datos', type: 'error'})
     });
   }
 

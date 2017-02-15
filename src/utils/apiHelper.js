@@ -63,4 +63,22 @@ export function deleteOne(table, id) {
   });
 }
 
+/**
+ * Returns column data given a table
+ */
+export function getColumnData(table) {
+  return new Promise((resolve, reject) => {
+    fetch(`${apiPath}/profile/${table}`, {
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(json => {
+      const tableColumns = json.alps.descriptors[0].descriptors;
+      resolve(tableColumns);
+    })
+    .catch(error => {
+      reject(error);
+    });
+  });
+}
 
