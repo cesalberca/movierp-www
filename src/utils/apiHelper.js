@@ -9,9 +9,9 @@ const apiPath = `http://localhost:${defaultPort}/${baseAPIPath}`;
  * .then(response => console.log(response))
  * .catch(error => console.log(error));
  */
-export function insert(table, item) {
+export function insert(resource, item) {
   return new Promise((resolve, reject) => {
-    fetch(`${apiPath}/${table}`, {
+    fetch(`${apiPath}/${resource}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,19 +28,35 @@ export function insert(table, item) {
   });
 }
 
-/**
- * Retrieves a list of all elements given a table
- */
-export function selectAll(table) {
+export function update(resource, id, updatedResource) {
   return new Promise((resolve, reject) => {
-    fetch(`${apiPath}/${table}`, {
+    fetch(`${apiPath}/${resource}/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedResource)
+    })
+    .then(response => {
+      if(response.ok) {
+        resolve(response.json());
+      } else {
+        reject(response.error);
+      }
+    });
+  });
+}
+
+/**
+ * Retrieves a list of all elements given a resource
+ */
+export function selectAll(resource) {
+  return new Promise((resolve, reject) => {
+    fetch(`${apiPath}/${resource}`, {
       method: 'GET'
     })
     .then(response => {
       if (response.ok) {
         response.json()
         .then(json => {
-          resolve(json._embedded[table])
+          resolve(json._embedded[resource])
         });
       } else {
         reject(response.error);
@@ -50,11 +66,11 @@ export function selectAll(table) {
 }
 
 /**
- * Deletes one resource from a table given an id
+ * Deletes one resource from a resource given an id
  */
-export function deleteOne(table, id) {
+export function deleteOne(resource, id) {
   return new Promise((resolve, reject) => {
-    fetch(`${apiPath}/${table}/${id}`, {
+    fetch(`${apiPath}/${resource}/${id}`, {
       method: 'DELETE'
     })
     .then((response) => {
@@ -68,17 +84,17 @@ export function deleteOne(table, id) {
 }
 
 /**
- * Returns column data given a table
+ * Returns column data given a resource
  */
-export function getColumnData(table) {
+export function getColumnData(resource) {
   return new Promise((resolve, reject) => {
-    fetch(`${apiPath}/profile/${table}`, {
+    fetch(`${apiPath}/profile/${resource}`, {
       method: 'GET'
     })
     .then(response => response.json())
     .then(json => {
-      const tableColumns = json.alps.descriptors[0].descriptors;
-      resolve(tableColumns);
+      const resourceColumns = json.alps.descriptors[0].descriptors;
+      resolve(resourceColumns);
     })
     .catch(error => {
       reject(error);
