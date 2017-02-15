@@ -10,13 +10,11 @@ class EditForm extends React.Component {
 
     this.state = {
       tableColumns: [],
-      data: {},
-      formItems: [],
-      formItemsValues: {}
+      formItemsValues: this.props.data
     }
 
-    this.loadFormItems = this.loadFormItems.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.loadFormItems = this.loadFormItems.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +25,7 @@ class EditForm extends React.Component {
     let changedValues = {};
     changedValues[e.target.name] = e.target.value;
     const updatedItems = Object.assign(this.state.formItemsValues, changedValues);
-    this.setState({formItemsValues: updatedItems})
+    this.setState({formItemsValues: updatedItems});
   }
 
   loadFormItems() {
@@ -41,9 +39,16 @@ class EditForm extends React.Component {
   }
 
   render() {
+    // We need to pass down the initial value to the form items
     const formItemsList = this.state.tableColumns.map((column, index) => {
       return(
-        <FormItem label={column.name} onChangeEvent={this.handleOnChange} key={index} inputName={column.name} inputType="text"/>
+        <FormItem 
+          label={column.name}
+          inputName={column.name}
+          onChangeEvent={this.handleOnChange}
+          key={index}
+          value={this.state.formItemsValues[column.name]}
+          inputType="text"/>
       );
     });
 

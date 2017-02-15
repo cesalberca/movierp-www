@@ -16,7 +16,7 @@ class Cinemas extends React.Component {
 
     this.state = {
       cinemas: [],
-      selectedCinema: '',
+      selectedCinema: {},
       isLoading: false,
       isCreateOpen: false,
       isDeleteOpen: false,
@@ -88,7 +88,7 @@ class Cinemas extends React.Component {
   handleRowClick(event, index) {
     const selectedCinema = this.state.cinemas[index];
     this.setState({selectedCinema});
-    this.handleOpenEditModal(this.state.selectedCinema);
+    this.handleOpenEditModal();
   }
 
   load() {
@@ -142,7 +142,7 @@ class Cinemas extends React.Component {
           modalTitle="Editar cine"
           isOpen={this.state.isEditOpen}
           handleCloseModal={this.handleCloseEditModal}>
-          <EditForm targetTable="cinemas" title="Editar cine" actionButtonText="Editar cine"/>
+          <EditForm targetTable="cinemas" data={this.state.selectedCinema} title="Editar cine" actionButtonText="Editar cine"/>
         </ModalForm>
       </div>
     );
