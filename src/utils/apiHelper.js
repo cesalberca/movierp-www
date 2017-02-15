@@ -105,3 +105,12 @@ export function getColumnData(resource) {
   });
 }
 
+export function getSelf(resource) {
+  return resource._links.self.href;
+}
+
+export function getId(url) {
+  const splitted = url.split('/');
+  return splitted[splitted.length - 1];
+}
+
