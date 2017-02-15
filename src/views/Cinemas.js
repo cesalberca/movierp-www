@@ -107,6 +107,7 @@ class Cinemas extends React.Component {
   onSubmit() {
     this.load();
     this.handleCloseCreateModal();
+    this.handleCloseEditModal();
   }
 
   render() {
@@ -142,7 +143,7 @@ class Cinemas extends React.Component {
           modalTitle="Editar cine"
           isOpen={this.state.isEditOpen}
           handleCloseModal={this.handleCloseEditModal}>
-          <EditForm targetTable="cinemas" data={this.state.selectedCinema} title="Editar cine" actionButtonText="Editar cine"/>
+          <EditForm onSubmit={this.onSubmit} targetTable="cinemas" data={this.state.selectedCinema} title="Editar cine" actionButtonText="Editar cine"/>
         </ModalForm>
       </div>
     );
