@@ -1,14 +1,36 @@
 import React from 'react';
 
-import UsersList from './../components/UsersList';
+import ViewGenerator from './ViewGenerator';
 
-const Users = () => {
-  return(
-    <div>
-      <h1>Usuarios</h1>
-      <UsersList/>
-    </div>
-  );
+class Users extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.columns = [
+      {
+        name: 'ID',
+        field: 'id',
+      },
+      {
+        name: 'Rol',
+        field: 'rol'
+      },
+      {
+        name: 'Nombre',
+        field: 'nombre'
+      },
+      {
+        name: 'Contraseña',
+        field: 'contrasena'
+      }
+    ];
+  }
+
+  render() {
+    return(
+      <ViewGenerator title="Usuarios" table="users" columns={this.columns}/>
+    );
+  }
 }
 
 export default Users;

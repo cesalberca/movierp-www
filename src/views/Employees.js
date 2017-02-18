@@ -1,23 +1,15 @@
 import React from 'react';
 
-import TableComponent from './../components/TableComponent';
-import FormContainer from './../components/FormContainer';
-import ModalForm from './../components/ModalForm';
-import FormActions from './../components/FormActions';
-import { selectAll } from './../utils/apiHelper';
+import ViewGenerator from './ViewGenerator';
 
 class Employees extends React.Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
 
-    this.state = {
-      employees: []
-    };
-
-this.Column = [
+    this.columns = [
       {
         name: 'ID',
-        field: 'idEmpleado'
+        field: 'id'
       },
       {
         name: 'Nombre',
@@ -36,47 +28,11 @@ this.Column = [
         field: 'idCine'
       }
     ];
-
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.refresh = this.refresh.bind(this);
   }
 
-  componentDidMount() {
-    selectAll('employees')
-    .then((response) => {
-      this.setState({employees: response})
-    });
-  }
-
-  handleOpenModal() {
-    this.setState({isOpen: true});
-  }
-
-  handleCloseModal() {
-    this.setState({isOpen: false});
-  }
-
-  refresh() {
-    selectAll('empleados')
-      .then((response) => {
-        this.setState({employees: response})
-      });
-  }
-
-render() {
-    return (
-      <div>
-        <h1>Empleados</h1>
-
-        <FormActions handleOpenModal={this.handleOpenModal} refresh={this.refresh}/>
-
-        <TableComponent data={this.state.employees} columns={this.Column} />
-
-        <ModalForm modalTitle="Modal empleado" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="employees" title="Nuevo empleado" actionButtonText="Crear nuevo empleado"/>
-        </ModalForm>
-      </div>
+  render() {
+    return(
+      <ViewGenerator title="Empleados" table="employees" columns={this.columns}/>
     );
   }
 }

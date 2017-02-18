@@ -1,23 +1,15 @@
 import React from 'react';
 
-import TableComponent from './../components/TableComponent';
-import FormContainer from './../components/FormContainer';
-import ModalForm from './../components/ModalForm';
-import FormActions from './../components/FormActions';
-import { selectAll } from './../utils/apiHelper';
+import ViewGenerator from './ViewGenerator';
 
 class Clients extends React.Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
 
-    this.state = {
-      clients: []
-    };
-
-this.Column = [
+    this.columns = [
       {
         name: 'ID',
-        field: 'idCliente'
+        field: 'id'
       },
       {
         name: 'Nombre',
@@ -36,44 +28,12 @@ this.Column = [
         field: 'email'
       }
     ];
-
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.refresh = this.refresh.bind(this);
   }
 
-  componentDidMount() {
-    selectAll('clients')
-    .then((response) => {
-      this.setState({clients: response})
-    });
-  }
 
-  handleOpenModal() {
-    this.setState({isOpen: true});
-  }
-
-  handleCloseModal() {
-    this.setState({isOpen: false});
-  }
-
-  refresh() {
-
-  }
-
-render() {
-    return (
-      <div>
-        <h1>Clientes</h1>
-
-        <FormActions handleOpenModal={this.handleOpenModal} refresh={this.refresh}/>
-
-        <TableComponent data={this.state.clients} columns={this.Column} />
-
-        <ModalForm modalTitle="Modal cines" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="clients" title="Nuevo cliente" actionButtonText="Crear nuevo cliente"/>
-        </ModalForm>
-      </div>
+  render() {
+    return(
+      <ViewGenerator title="Clientes" table="clients" columns={this.columns}/>
     );
   }
 }

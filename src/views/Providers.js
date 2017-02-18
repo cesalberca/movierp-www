@@ -1,26 +1,15 @@
 import React from 'react';
 
-import { selectAll } from './../utils/apiHelper';
-
-import TableComponent from './../components/TableComponent';
-import FormContainer from './../components/FormContainer';
-import ModalForm from './../components/ModalForm';
-import FormActions from './../components/FormActions';
-
+import ViewGenerator from './ViewGenerator';
 
 class Providers extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      providers: [],
-      isOpen: false
-    };
-
     this.columns = [
       {
         name: 'ID',
-        field: 'idProveedor'
+        field: 'id'
       },
       {
         name: 'Nombre Comerical',
@@ -39,45 +28,13 @@ class Providers extends React.Component {
         field: 'cif'
       }
     ];
-
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.refresh = this.refresh.bind(this);
-  }
-
-  componentDidMount() {
-    this.refresh();
-  }
-
-  handleOpenModal() {
-    this.setState({isOpen: true});
-  }
-
-  handleCloseModal() {
-    this.setState({isOpen: false});
-  }
-
-  refresh() {
-    selectAll('providers')
-    .then((response) => {
-      this.setState({providers: response})
-    });
   }
 
   render() {
-    return (
-      <div>
-        <h1>Proveedores</h1>
-
-        <FormActions handleOpenModal={this.handleOpenModal} refresh={this.refresh}/>
-
-        <TableComponent data={this.state.providers} columns={this.columns} />
-
-        <ModalForm modalTitle="Modal proveedores" isOpen={this.state.isOpen} handleCloseModal={this.handleCloseModal}>
-          <FormContainer targetTable="providers" title="Nuevo Proveedor" actionButtonText="Crear nuevo proveedor"/>
-        </ModalForm>
-      </div>
+    return(
+      <ViewGenerator title="Proveedores" table="providers" columns={this.columns}/>
     );
   }
 }
+
 export default Providers;
