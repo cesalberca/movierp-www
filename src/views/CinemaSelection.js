@@ -34,11 +34,11 @@ class CinemaSelection extends React.Component {
 
   render() {
     const cinemaSelectionItems = this.state.cinemaList.map((item, index) => {
-      return(<CinemaSelectionItem key={index} 
-      cinemaSelectionItemName={item.nombre} 
+      return(<CinemaSelectionItem key={index}
+      cinemaSelectionItemName={item.nombre}
       cinemaSelectionItemAddress={item.direccion}
       cinemaSelectionItemOnClickEvent={this.loadCinemaClickedFilms}
-      cinemaSelectionId = {item.idCine}/>);
+      cinemaSelectionId={item.idCine}/>);
     });
 
     return (
