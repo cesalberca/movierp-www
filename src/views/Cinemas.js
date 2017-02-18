@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 
-import { selectAll, getId } from './../utils/apiHelper';
+import { selectAll } from './../utils/apiHelper';
 
 import TableComponent from './../components/TableComponent';
 import FormContainer from './../components/FormContainer';
@@ -91,13 +91,6 @@ class Cinemas extends React.Component {
     this.handleOpenEditModal();
   }
 
-  parseIds(data) {
-    let object = {}
-    const parsedData = data.map((datum) => {
-
-    });
-  }
-
   load() {
     this.setState({isLoading: true});
     selectAll('cinemas')
@@ -115,7 +108,6 @@ class Cinemas extends React.Component {
     this.load();
     this.handleCloseCreateModal();
     this.handleCloseEditModal();
-    console.log(getId(this.state.selectedCinema._links.self.href));
   }
 
   render() {

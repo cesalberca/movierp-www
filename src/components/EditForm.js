@@ -55,7 +55,7 @@ class EditForm extends React.Component {
     // We need to pass down the initial value to the form items
     const formItemsList = this.state.tableColumns.map((column, index) => {
       return(
-        <FormItem 
+        <FormItem
           label={column.name}
           key={index}
           onChangeEvent={this.handleOnChange}
