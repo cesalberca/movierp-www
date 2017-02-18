@@ -26,7 +26,7 @@ class Cinemas extends React.Component {
     this.columns = [
       {
         name: 'ID',
-        field: 'idCine'
+        field: 'id'
       },
       {
         name: 'Nombre',
@@ -128,8 +128,8 @@ class Cinemas extends React.Component {
           handleOpenDeleteModal={this.handleOpenDeleteModal}
           handleLoad={this.load}/>
 
-        <TableComponent 
-          data={this.state.cinemas} 
+        <TableComponent
+          data={this.state.cinemas}
           columns={this.columns}
           handleRowClick={this.handleRowClick}/>
 

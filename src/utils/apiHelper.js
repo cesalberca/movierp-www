@@ -105,12 +105,24 @@ export function getColumnData(resource) {
   });
 }
 
+/**
+ * Gets the whole resources url o
+ */
 export function getSelf(resource) {
   return resource._links.self.href;
 }
 
+/**
+ * Gets the id of a resource given it's url
+ */
 export function getId(url) {
   const splitted = url.split('/');
   return splitted[splitted.length - 1];
 }
 
+/**
+ * Gets the id of a given resource
+ */
+export function getSelfId(resource) {
+  return getId(getSelf(resource));
+}
