@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
+import AuthService from './utils/authService';
+
 import App from './views/App';
+import Login from './views/Login';
 import Home from './views/Home';
 import Cinemas from './views/Cinemas';
 import Employees from './views/Employees';
@@ -26,21 +29,30 @@ import './stylesheets/form.css';
 import './../node_modules/sweetalert/dist/sweetalert.css';
 import './index.css';
 
+const auth = new AuthService('kR2EUygv0YR3EIoAPfde0UD3AS7XIhL8', 'pensemos.eu.auth0.com');
+
+const requireAuth = (nextState, replace) => {
+  if (!auth.loggedIn()) {
+    replace({pathname: '/login'});
+  }
+}
+
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={App}>
+    <Route path="/" component={App} auth={auth}>
       <IndexRoute component={Home}/>
-      <Route path="cinemas" component={Cinemas}/>
-      <Route path="employees" component={Employees}/>
-      <Route path="users" component={Users}/>
-      <Route path="rooms" component={Rooms}/>
-      <Route path="clients" component={Clients}/>
-      <Route path="providers" component={Providers}/>
-      <Route path="films" component={Films}/>
-      <Route path="sessions" component={Sessions}/>
-      <Route path="orders" component={Orders}/>
-      <Route path="products" component={Products}/>
-      <Route path="cinemaselection" component={CinemaSelection}/>
+      <Route path="login" component={Login}/>
+      <Route path="cinemas" component={Cinemas} onEnter={requireAuth}/>
+      <Route path="employees" component={Employees} onEnter={requireAuth}/>
+      <Route path="users" component={Users} onEnter={requireAuth}/>
+      <Route path="rooms" component={Rooms} onEnter={requireAuth}/>
+      <Route path="clients" component={Clients} onEnter={requireAuth}/>
+      <Route path="providers" component={Providers} onEnter={requireAuth}/>
+      <Route path="films" component={Films} onEnter={requireAuth}/>
+      <Route path="sessions" component={Sessions} onEnter={requireAuth}/>
+      <Route path="orders" component={Orders} onEnter={requireAuth}/>
+      <Route path="products" component={Products} onEnter={requireAuth}/>
+      <Route path="cinemaselection" component={CinemaSelection} onEnter={requireAuth}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>,
