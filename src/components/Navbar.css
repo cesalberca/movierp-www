@@ -13,3 +13,12 @@
 .Navbar__logo {
   width: var(--navbar-width);
 }
+
+.Navbar__logout {
+  margin-top: auto;
+  padding: var(--spacing-unit-mid);
+}
+
+.Navbar__logout > span {
+  padding-left: 0.25rem;
+}

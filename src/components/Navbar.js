@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'react-fa';
 import { IndexLink } from 'react-router';
 import AuthService from './../utils/authService';
 
@@ -24,7 +25,10 @@ const Navbar = ({auth}) => {
       <NavbarLink to="/orders">Pedidos</NavbarLink>
       <NavbarLink to="/products">Productos</NavbarLink>
       <NavbarLink to="/films">Películas</NavbarLink>
-      <button className="btn" onClick={auth.logout.bind(this)}>Cerrar sesión</button>
+      <button className="btn btn--dark Navbar__logout" onClick={auth.logout.bind(this)}>
+        <Icon name="sign-out"/>
+        <span>Cerrar sesión</span>
+      </button>
 
     </navbar>
   );
