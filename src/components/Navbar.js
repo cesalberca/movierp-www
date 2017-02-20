@@ -29,7 +29,6 @@ const Navbar = ({auth}) => {
         <Icon name="sign-out"/>
         <span>Cerrar sesión</span>
       </button>
-
     </navbar>
   );
 }
