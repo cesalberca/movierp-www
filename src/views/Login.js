@@ -1,5 +1,4 @@
 import React from 'react';
-import AuthService from './../utils/authService';
 
 export class Login extends React.Component {
   render() {

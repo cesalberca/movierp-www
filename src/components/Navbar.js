@@ -1,7 +1,6 @@
 import React from 'react';
 import { Icon } from 'react-fa';
 import { IndexLink } from 'react-router';
-import AuthService from './../utils/authService';
 
 import NavbarLink from './NavbarLink';
 
