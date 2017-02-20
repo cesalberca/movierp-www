@@ -10,12 +10,12 @@ class App extends React.Component {
     if (this.props.children) {
       children = React.cloneElement(this.props.children, {
         auth: this.props.route.auth
-      })
+      });
     }
 
     return(
       <div className="App">
-        <Navbar/>
+        <Navbar auth={this.props.route.auth}/>
         <main className="App__content">
           {children}
         </main>

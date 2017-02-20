@@ -1,12 +1,7 @@
-import React, { PropTypes as T } from 'react';
+import React from 'react';
 import AuthService from './../utils/authService';
 
 export class Login extends React.Component {
-  static propTypes = {
-    location: T.object,
-    auth: T.instanceOf(AuthService)
-  };
-
   render() {
     const { auth } = this.props;
     return(

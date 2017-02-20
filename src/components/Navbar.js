@@ -1,5 +1,6 @@
 import React from 'react';
-import {IndexLink} from 'react-router';
+import { IndexLink } from 'react-router';
+import AuthService from './../utils/authService';
 
 import NavbarLink from './NavbarLink';
 
@@ -7,7 +8,7 @@ import logo from './../assets/logo.svg';
 
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({auth}) => {
   return (
     <navbar className="Navbar">
       <IndexLink to="/" className="Navbar__index">
@@ -23,6 +24,7 @@ const Navbar = () => {
       <NavbarLink to="/orders">Pedidos</NavbarLink>
       <NavbarLink to="/products">Productos</NavbarLink>
       <NavbarLink to="/films">Películas</NavbarLink>
+      <button className="btn" onClick={auth.logout.bind(this)}>Cerrar sesión</button>
 
     </navbar>
   );

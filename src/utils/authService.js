@@ -44,6 +44,7 @@ class AuthService {
   logout() {
     // Clear user token and profile data from local storage
     localStorage.removeItem('id_token');
+    browserHistory.replace('/');
   }
 }
 
