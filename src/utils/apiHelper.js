@@ -68,6 +68,24 @@ export function selectAll(resource) {
   });
 }
 
+export function selectAllWithFilter(resource, filter, objetiveResource){
+  return new Promise((resolve, reject) => {
+    fetch(`${apiPath}/${resource}/search/${filter}`, {
+      method: 'GET'
+    })
+    .then(response => {
+      if (response.ok) {
+        response.json()
+        .then(json => {
+          resolve(json._embedded[objetiveResource])
+        });
+      } else {
+        reject(response.error);
+      }
+    });
+  });
+}
+
 /**
  * Deletes one resource from a resource given an id
  */

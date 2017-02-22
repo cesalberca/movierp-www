@@ -2,7 +2,7 @@ import React from 'react';
 
 import CinemaSelectionItem from './../components/CinemaSelectionItem';
 
-import { selectAll, getSelfId } from './../utils/apiHelper';
+import { selectAll, getSelfId, selectAllWithFilter } from './../utils/apiHelper';
 
 class CinemaSelection extends React.Component {
   constructor(props){
@@ -13,7 +13,7 @@ class CinemaSelection extends React.Component {
     };
 
     this.loadCinemas = this.loadCinemas.bind(this);
-    this.loadCinemaClickedFilms = this.loadCinemaClickedFilms.bind(this);
+    this.loadSelectedCinemaSessions = this.loadSelectedCinemaSessions.bind(this);
   }
 
   componentDidMount() {
@@ -28,17 +28,20 @@ class CinemaSelection extends React.Component {
     });
   }
 
-  loadCinemaClickedFilms(cinemaSelectionId) {
-    console.log(cinemaSelectionId);
+  loadSelectedCinemaSessions(selectedCinemaId) {
+    selectAllWithFilter(`cinemas`, `findMoviesByCinemaId?idCine=${selectedCinemaId}`, 'films')
+    .then((response) => {
+      console.log(response);
+    });
   }
 
   render() {
     const cinemaSelectionItems = this.state.cinemaList.map((item, index) => {
-      console.log(item);
+      //console.log(item);
       return(<CinemaSelectionItem key={index}
       cinemaSelectionItemName={item.nombre}
       cinemaSelectionItemAddress={item.direccion}
-      cinemaSelectionItemOnClickEvent={this.loadCinemaClickedFilms}
+      cinemaSelectionItemOnClickEvent={this.loadSelectedCinemaSessions}
       cinemaSelectionId={getSelfId(item)}/>);
     });
 
