@@ -1,10 +1,11 @@
 import React from 'react';
 
-const FilmSelectionItem = ({FilmSelectionItemPosterSource, FilmSelectionItemTitle}) => {
+const FilmSelectionItem = ({filmSelectionItemPosterSource, filmSelectionItemTitle, filmSelectionItemDuration, filmSelectionItemOnClickEvent, filmSelectionItemId}) => {
   return(
-    <div>
-      <img src={FilmSelectionItemPosterSource}/>
-      <p>{FilmSelectionItemTitle}</p>
+    <div onClick={() => filmSelectionItemOnClickEvent(filmSelectionItemId)}>
+      <img src={filmSelectionItemPosterSource}/>
+      <p>{filmSelectionItemTitle}</p>
+      <p>{filmSelectionItemDuration}</p>
     </div>
   )
 }

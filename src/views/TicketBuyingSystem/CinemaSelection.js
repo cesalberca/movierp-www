@@ -2,7 +2,7 @@ import React from 'react';
 
 import CinemaSelectionItem from './../components/CinemaSelectionItem';
 
-import { selectAll, getSelfId, selectAllWithFilter } from './../utils/apiHelper';
+import { selectAll, getSelfId } from './../utils/apiHelper';
 
 class CinemaSelection extends React.Component {
   constructor(props){
@@ -13,7 +13,7 @@ class CinemaSelection extends React.Component {
     };
 
     this.loadCinemas = this.loadCinemas.bind(this);
-    this.loadSelectedCinemaSessions = this.loadSelectedCinemaSessions.bind(this);
+    this.changeViewToFilmSelection = this.changeViewToFilmSelection.bind(this);
   }
 
   componentDidMount() {
@@ -28,11 +28,8 @@ class CinemaSelection extends React.Component {
     });
   }
 
-  loadSelectedCinemaSessions(selectedCinemaId) {
-    selectAllWithFilter(`cinemas`, `findMoviesByCinemaId?idCine=${selectedCinemaId}`, 'films')
-    .then((response) => {
-      console.log(response);
-    });
+  changeViewToFilmSelection(selectedCinemaId){
+    //Aqui cambiamos de view a filmSelection y le pasamos la selectedCinemaId
   }
 
   render() {
@@ -41,7 +38,7 @@ class CinemaSelection extends React.Component {
       return(<CinemaSelectionItem key={index}
       cinemaSelectionItemName={item.nombre}
       cinemaSelectionItemAddress={item.direccion}
-      cinemaSelectionItemOnClickEvent={this.loadSelectedCinemaSessions}
+      cinemaSelectionItemOnClickEvent={this.changeViewToFilmSelection}
       cinemaSelectionId={getSelfId(item)}/>);
     });
 
