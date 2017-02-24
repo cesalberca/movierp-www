@@ -53,8 +53,8 @@ ReactDOM.render(
       <Route path="/sessions" component={Sessions} onEnter={requireAuth}/>
       <Route path="/orders" component={Orders} onEnter={requireAuth}/>
       <Route path="/products" component={Products} onEnter={requireAuth}/>
-      <Route path="/cinemaSelection" component={CinemaSelection} onEnter={requireAuth}/>
-      <Route path="/cinemaSelection/:cinemaSelectionId" component={FilmSelection}/>
+      <Route path="/tickets" component={CinemaSelection} onEnter={requireAuth}/>
+      <Route path="/tickets/:cinemaSelectionId" component={FilmSelection}/>
     </Route>
   </Router>,
   document.getElementById('root')
