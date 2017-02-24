@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FilmSelectionItem from './../../components/FilmSelectionItem';
-import { selectAllWithFilter } from './../../utils/apiHelper';
+import { selectWithFilter } from './../../utils/apiHelper';
 
 class FilmSelection extends React.Component {
   constructor(props){
