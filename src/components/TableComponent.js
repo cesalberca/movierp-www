@@ -3,8 +3,6 @@ import ReactTable from 'react-table';
 
 import { getSelfId } from './../utils/apiHelper';
 
-import CellComponent from './CellComponent';
-
 import './TableComponent.css';
 
 class TableComponent extends React.Component {
@@ -26,7 +24,7 @@ class TableComponent extends React.Component {
   }
 
   render() {
-    const { columns, data, containerWidth, containerHeight } = this.props;
+    const { columns } = this.props;
     return(
       <ReactTable
         getTdProps={(state, rowInfo, column, instance) => {
@@ -40,6 +38,7 @@ class TableComponent extends React.Component {
         }}
         data={this.parseFields()}
         columns={columns}
+        defaultPageSize="10"
         className="-striped -highlight"
         previousText="Anterior"
         nextText="Siguiente"

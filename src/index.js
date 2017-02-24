@@ -56,6 +56,7 @@ ReactDOM.render(
       <Route path="/products" component={Products} onEnter={requireAuth}/>
       <Route path="/tickets" component={CinemaSelection} onEnter={requireAuth}/>
       <Route path="/tickets/:cinemaSelectionId" component={FilmSelection}/>
+      <Route path="*" component={NotFound}/>
     </Route>
   </Router>,
   document.getElementById('root')
