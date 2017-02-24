@@ -1,6 +1,6 @@
 import React from 'react';
 
-import filmSelectionItem from './../components/FilmSelectionItem';
+import filmSelectionItem from './../../components/FilmSelectionItem';
 import { selectAll } from './../utils/apiHelper';
 
 class FilmSelection extends React.Component {

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import CinemaSelectionItem from './../components/CinemaSelectionItem';
+import CinemaSelectionItem from './../../components/CinemaSelectionItem';
 
-import { selectAll, getSelfId } from './../utils/apiHelper';
+import { selectAll, getSelfId } from './../../utils/apiHelper';
 
 class CinemaSelection extends React.Component {
   constructor(props){
