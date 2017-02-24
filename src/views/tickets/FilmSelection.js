@@ -27,16 +27,15 @@ class FilmSelection extends React.Component {
 
   render() {
     const filmSelectionItems = this.state.filmList.map((item, index) =>
-      (<FilmSelectionItem
-          key={index}
-          title={item.nombre}
-          duration={item.duracion}/>
-      )
+      <FilmSelectionItem
+        key={index}
+        title={item.nombre}
+        synopsis={item.sinopsis}
+        duration={item.duracion}/>
     );
 
     return(
       <div>
-        <h1>{this.props.params.cinemaSelectionId}</h1>
         {filmSelectionItems}
       </div>
     );
