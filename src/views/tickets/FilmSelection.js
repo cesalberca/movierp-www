@@ -31,10 +31,8 @@ class FilmSelection extends React.Component {
   }
 
   render() {
-    getFilmData('Tron')
-    .then(data => {
-      console.log(data);
-    })
+    getFilmData('xxx');
+   
     const filmSelectionItems = this.state.filmList.map((item, index) =>
       <FilmSelectionItem
         key={index}
@@ -43,7 +41,6 @@ class FilmSelection extends React.Component {
         duration={item.duracion}
         filmId={getSelfId(item)}/>
     );
-    console.log(this.state.filmList);
 
     return(
       <div>
