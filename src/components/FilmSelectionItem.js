@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { Link } from 'react-router';
-
-const FilmSelectionItem = ({poster, title, duration, cinemaId, filmId}) => {
+const FilmSelectionItem = ({poster, title, duration, synopsis, filmSelectionItemId}) => {
   return(
-    <Link to={`/tickets/${cinemaId}/${filmId}`}>
-      <img src={poster}/>
-      <p>{title}</p>
-      <p>{duration}</p>
-    </Link>
+    <div className="card">
+      <h1 className="card__title">{title}</h1>
+      <h3 className="card__subtitle">Duración - {duration}</h3>
+      <p className="card__text">{synopsis}</p>
+    </div>
   );
 }
 

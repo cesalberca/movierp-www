@@ -28,6 +28,7 @@ import './stylesheets/colors.css';
 import './stylesheets/typography.css';
 import './stylesheets/button.css';
 import './stylesheets/form.css';
+import './stylesheets/card.css';
 import './../node_modules/sweetalert/dist/sweetalert.css';
 import './index.css';
 
@@ -57,6 +58,7 @@ ReactDOM.render(
       <Route path="/tickets" component={CinemaSelection} onEnter={requireAuth}/>
       <Route path="/tickets/:cinemaSelectionId" component={FilmSelection}/>
       <Route path="/tickets/:cinemaSelectionId/:movieSelectionId" component={SessionSelection}/>
+      <Route path="*" component={NotFound}/>
     </Route>
   </Router>,
   document.getElementById('root')

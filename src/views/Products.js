@@ -8,16 +8,16 @@ class Products extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'Nombre',
-        field: 'nombre'
+        header: 'Nombre',
+        accessor: 'nombre'
       },
       {
-        name: 'Precio',
-        field: 'precio'
+        header: 'Precio',
+        accessor: 'precio'
       }
     ];
   }

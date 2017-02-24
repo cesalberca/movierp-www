@@ -8,20 +8,20 @@ class Sessions extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'Fecha comienzo',
-        field: 'fechaComienzo'
+        header: 'Fecha comienzo',
+        accessor: 'fechaComienzo'
       },
       {
-        name: 'ID Sala',
-        field: 'idSala'
+        header: 'ID Sala',
+        accessor: 'idSala'
       },
       {
-        name: 'ID Película',
-        field: 'idPelicula'
+        header: 'ID Película',
+        accessor: 'idPelicula'
       }
     ]
   }

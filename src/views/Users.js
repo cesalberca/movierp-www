@@ -8,20 +8,20 @@ class Users extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id',
+        header: 'ID',
+        accessor: 'id',
       },
       {
-        name: 'Rol',
-        field: 'rol'
+        header: 'Rol',
+        accessor: 'rol'
       },
       {
-        name: 'Nombre',
-        field: 'nombre'
+        header: 'Nombre',
+        accessor: 'nombre'
       },
       {
-        name: 'Contraseña',
-        field: 'contrasena'
+        header: 'Contraseña',
+        accessor: 'contrasena'
       }
     ];
   }

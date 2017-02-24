@@ -8,20 +8,20 @@ class Films extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'Nombre',
-        field: 'nombre'
+        header: 'Nombre',
+        accessor: 'nombre'
       },
       {
-        name: 'Sinopsis',
-        field: 'sinopsis'
+        header: 'Sinopsis',
+        accessor: 'sinopsis'
       },
       {
-        name: 'Duracion',
-        field: 'duracion'
+        header: 'Duracion',
+        accessor: 'duracion'
       }
     ];
   }

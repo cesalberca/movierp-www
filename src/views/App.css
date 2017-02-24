@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
+  min-height: 100vh;
   width: calc(100% - var(--navbar-width));
   margin-left: var(--navbar-width);
   background-color: var(--grey-color);
@@ -9,13 +9,4 @@
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
   padding: 1rem;
-}
-
-.App__content > * {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

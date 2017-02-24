@@ -70,7 +70,7 @@ class ViewGenerator extends React.Component {
     this.setState({isEditOpen: false});
   }
 
-  handleRowClick(event, index) {
+  handleRowClick(index) {
     const selectedData = this.state.data[index];
     this.setState({selectedData});
     this.handleOpenEditModal();

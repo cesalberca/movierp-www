@@ -1,10 +1,10 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
-import { Link } from 'react-router';
+
+import { selectAll, getSelfId } from './../../utils/apiHelper';
 
 import CinemaSelectionItem from './../../components/CinemaSelectionItem';
 
-import { selectAll, getSelfId } from './../../utils/apiHelper';
+import './CinemaSelection.css';
 
 class CinemaSelection extends React.Component {
   constructor(props){
@@ -30,15 +30,18 @@ class CinemaSelection extends React.Component {
 
   render() {
     const cinemaSelectionItems = this.state.cinemaList.map((item, index) =>
-      (<CinemaSelectionItem key={index}
-      name={item.nombre}
-      address={item.direccion}
-      id={getSelfId(item)}/>)
+      <CinemaSelectionItem
+        key={index}
+        name={item.nombre}
+        address={item.direccion}
+        id={getSelfId(item)}/>
     );
 
     return (
       <div>
-        {cinemaSelectionItems}
+        <div className="CinemaSelection">
+          {cinemaSelectionItems}
+        </div>
       </div>
     );
   }

@@ -8,12 +8,12 @@ class Orders extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'ID Proveedor',
-        field: 'idProveedor'
+        header: 'ID Proveedor',
+        accessor: 'idProveedor'
       }
     ];
   }

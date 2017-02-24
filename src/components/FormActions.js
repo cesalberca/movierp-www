@@ -11,7 +11,6 @@ class FormActions extends React.Component {
     return(
       <div className="FormActions">
         <button onClick={handleOpenCreateModal} className="btn btn--dark">Crear</button>
-        <button className="btn btn--dark">Buscar</button>
         <button onClick={handleOpenDeleteModal} className="btn btn--dark">Borrar</button>
         <button onClick={handleLoad} disabled={isLoading} className="btn btn--dark"><Icon name="refresh" spin={isLoading}/></button>
         <ModalForm />

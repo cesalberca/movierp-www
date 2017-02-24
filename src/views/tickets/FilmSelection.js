@@ -2,6 +2,7 @@ import React from 'react';
 
 import FilmSelectionItem from './../../components/FilmSelectionItem';
 import { selectWithFilter, getSelfId } from './../../utils/apiHelper';
+import { getFilmData } from './../../utils/moviedbApiHelper';
 
 class FilmSelection extends React.Component {
   constructor(props){
@@ -25,21 +26,27 @@ class FilmSelection extends React.Component {
     });
   }
 
+  getPosterForFilm(film) {
+    // getUrlPoster('sing');
+  }
+
   render() {
+    getFilmData('Tron')
+    .then(data => {
+      console.log(data);
+    })
     const filmSelectionItems = this.state.filmList.map((item, index) =>
-      (<FilmSelectionItem
-          key={index}
-          title={item.nombre}
-          duration={item.duracion}
-          cinemaId={this.props.params.cinemaSelectionId}
-          filmId={getSelfId(item)}/>
-      )
+      <FilmSelectionItem
+        key={index}
+        title={item.nombre}
+        synopsis={item.sinopsis}
+        duration={item.duracion}
+        filmId={getSelfId(item)}/>
     );
     console.log(this.state.filmList);
 
     return(
       <div>
-        <h1>{this.props.params.cinemaSelectionId}</h1>
         {filmSelectionItems}
       </div>
     );

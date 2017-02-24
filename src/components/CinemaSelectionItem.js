@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import './CinemaSelectionItem.css';
-
 const CinemaSelectionItem = ({id, name, address}) => {
   return(
-    <Link to={`/tickets/${id}`} className="CinemaSelectionItem">
-      <p>{name}</p>
+    <Link to={`/tickets/${id}`} className="card">
+      <h1 className="card__title">{name}</h1>
       <p>{address}</p>
     </Link>
   );
