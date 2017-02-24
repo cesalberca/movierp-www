@@ -8,24 +8,24 @@ class Cinemas extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'Nombre',
-        field: 'nombre'
+        header: 'Nombre',
+        accessor: 'nombre'
       },
       {
-        name: 'Cif',
-        field: 'cif'
+        header: 'Cif',
+        accessor: 'cif'
       },
       {
-        name: 'Dirección',
-        field: 'direccion'
+        header: 'Dirección',
+        accessor: 'direccion'
       },
       {
-        name: 'Código postal',
-        field: 'codigoPostal'
+        header: 'Código postal',
+        accessor: 'codigoPostal'
       }
     ];
   }

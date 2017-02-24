@@ -8,24 +8,24 @@ class Providers extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'Nombre Comerical',
-        field: 'nombre_comerical'
+        header: 'Nombre Comerical',
+        accessor: 'nombre_comerical'
       },
       {
-        name: 'Nombre Fiscal',
-        field: 'nombre_fiscal'
+        header: 'Nombre Fiscal',
+        accessor: 'nombre_fiscal'
       },
       {
-        name: 'Dirección',
-        field: 'direccion'
+        header: 'Dirección',
+        accessor: 'direccion'
       },
       {
-        name: 'C.I.F.',
-        field: 'cif'
+        header: 'C.I.F.',
+        accessor: 'cif'
       }
     ];
   }

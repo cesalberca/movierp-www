@@ -8,24 +8,24 @@ class Employees extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'Nombre',
-        field: 'nombre'
+        header: 'Nombre',
+        accessor: 'nombre'
       },
       {
-        name: 'Apellidos',
-        field: 'apellidos'
+        header: 'Apellidos',
+        accessor: 'apellidos'
       },
       {
-        name: 'DNI',
-        field: 'dni'
+        header: 'DNI',
+        accessor: 'dni'
       },
       {
-        name: 'Id cine',
-        field: 'idCine'
+        header: 'Id cine',
+        accessor: 'idCine'
       }
     ];
   }

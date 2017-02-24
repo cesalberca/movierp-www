@@ -1,12 +1,11 @@
 import React from 'react';
-import {Table, Column, Cell} from 'fixed-data-table';
-import Dimensions from 'react-dimensions';
+import ReactTable from 'react-table';
 
 import { getSelfId } from './../utils/apiHelper';
 
 import CellComponent from './CellComponent';
 
-import './../stylesheets/fixed-data-table.css';
+import './TableComponent.css';
 
 class TableComponent extends React.Component {
   constructor(props) {
@@ -28,28 +27,29 @@ class TableComponent extends React.Component {
 
   render() {
     const { columns, data, containerWidth, containerHeight } = this.props;
-    const columnsList = columns.map((column, index) => {
-      return (
-        <Column
-          key={index}
-          header={<Cell>{column.name}</Cell>}
-          cell={<CellComponent data={this.parseFields()} field={column.field}/>}
-          width={150}/>
-      );
-    });
-
     return(
-      <Table
-        rowsCount={data.length}
-        rowHeight={50}
-        headerHeight={50}
-        width={containerWidth}
-        height={containerHeight}
-        onRowClick={this.props.handleRowClick}>
-          {columnsList}
-      </Table>
+      <ReactTable
+        getTdProps={(state, rowInfo, column, instance) => {
+          return {
+            onClick: e => {
+              if (rowInfo) {
+                this.props.handleRowClick(rowInfo.index);
+              }
+            }
+          }
+        }}
+        data={this.parseFields()}
+        columns={columns}
+        className="-striped -highlight"
+        previousText="Anterior"
+        nextText="Siguiente"
+        loadingText="Cargando..."
+        noDataText="No se han enontrado filas"
+        pageText="Página"
+        ofText="de"
+        rowsText="Filas"/>
     );
   }
 }
 
-export default Dimensions()(TableComponent);
+export default TableComponent;

@@ -8,16 +8,16 @@ class Rooms extends React.Component {
 
     this.columns = [
       {
-        name: 'ID',
-        field: 'id'
+        header: 'ID',
+        accessor: 'id'
       },
       {
-        name: 'Nº Butacas',
-        field: 'numeroButacas'
+        header: 'Nº Butacas',
+        accessor: 'numeroButacas'
       },
       {
-        name: 'Id cine',
-        field: 'idCine'
+        header: 'Id cine',
+        accessor: 'idCine'
       }
     ];
   }
