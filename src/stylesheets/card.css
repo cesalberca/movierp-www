@@ -14,7 +14,7 @@
 }
 
 .card__subtitle {
-
+  font-weight: italic;
 }
 
 .card:hover {
