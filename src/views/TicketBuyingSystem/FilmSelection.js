@@ -1,14 +1,13 @@
 import React from 'react';
 
-import filmSelectionItem from './../../components/FilmSelectionItem';
-import { selectAll } from './../utils/apiHelper';
+import FilmSelectionItem from './../../components/FilmSelectionItem';
+import { selectAllWithFilter } from './../../utils/apiHelper';
 
 class FilmSelection extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      selectedCinemaId: this.props.selectedCinemaId,
       filmList: []
     };
 
@@ -20,24 +19,25 @@ class FilmSelection extends React.Component {
   }
 
   loadFilms() {
-    selectAllWithFilter(`cinemas`, `findMoviesByCinemaId?idCine=${selectedCinemaId}`, 'films')
+    selectAllWithFilter('cinemas', `findMoviesByCinemaId?idCine=${this.props.params.cinemaSelectionId}`, 'films')
     .then((response) => {
       this.setState({filmList: response});
     });
   }
 
-  changeViewToSessionSelection(selectedFilmId){
-    //Aqui cambiamos de view a sessionSelection y le pasamos this.state.selectedCinemaId y selectedFilmId
-  }
-
   render() {
-    const filmSelectionItems = this.state.filmList.map((item, index) => {
-      return(<filmSelectionItem key={index}
-        FilmSelectionItemTitle = {item.nombre}
-        filmSelectionItemDuration = {item.duracion}/>);
-    });
+    const filmSelectionItems = this.state.filmList.map((item, index) =>
+      (<FilmSelectionItem
+          key={index}
+          title={item.nombre}
+          duration={item.duracion}/>
+      )
+    );
+
     return(
       <div>
+        <h1>{this.props.params.cinemaSelectionId}</h1>
+        <p>Hola</p>
         {filmSelectionItems}
       </div>
     );
