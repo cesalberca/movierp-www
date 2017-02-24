@@ -27,6 +27,7 @@ import './stylesheets/colors.css';
 import './stylesheets/typography.css';
 import './stylesheets/button.css';
 import './stylesheets/form.css';
+import './stylesheets/card.css';
 import './../node_modules/sweetalert/dist/sweetalert.css';
 import './index.css';
 
