@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FilmSelectionItem from './../../components/FilmSelectionItem';
-import { selectWithFilter } from './../../utils/apiHelper';
+import { selectWithFilter, getSelfId } from './../../utils/apiHelper';
 
 class FilmSelection extends React.Component {
   constructor(props){
@@ -30,9 +30,12 @@ class FilmSelection extends React.Component {
       (<FilmSelectionItem
           key={index}
           title={item.nombre}
-          duration={item.duracion}/>
+          duration={item.duracion}
+          cinemaId={this.props.params.cinemaSelectionId}
+          filmId={getSelfId(item)}/>
       )
     );
+    console.log(this.state.filmList);
 
     return(
       <div>

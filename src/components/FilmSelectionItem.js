@@ -1,13 +1,15 @@
 import React from 'react';
 
-const FilmSelectionItem = ({poster, title, duration, filmSelectionItemId}) => {
+import { Link } from 'react-router';
+
+const FilmSelectionItem = ({poster, title, duration, cinemaId, filmId}) => {
   return(
-    <div>
+    <Link to={`/tickets/${cinemaId}/${filmId}`}>
       <img src={poster}/>
       <p>{title}</p>
       <p>{duration}</p>
-    </div>
-  )
+    </Link>
+  );
 }
 
 export default FilmSelectionItem;

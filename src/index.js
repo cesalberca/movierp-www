@@ -20,6 +20,7 @@ import Products from './views/Products';
 import NotFound from './views/NotFound';
 import CinemaSelection from './views/tickets/CinemaSelection';
 import FilmSelection from './views/tickets/FilmSelection';
+import SessionSelection from './views/tickets/SessionSelection';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -55,6 +56,7 @@ ReactDOM.render(
       <Route path="/products" component={Products} onEnter={requireAuth}/>
       <Route path="/tickets" component={CinemaSelection} onEnter={requireAuth}/>
       <Route path="/tickets/:cinemaSelectionId" component={FilmSelection}/>
+      <Route path="/tickets/:cinemaSelectionId/:movieSelectionId" component={SessionSelection}/>
     </Route>
   </Router>,
   document.getElementById('root')
