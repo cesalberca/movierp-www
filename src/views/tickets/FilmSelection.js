@@ -19,7 +19,7 @@ class FilmSelection extends React.Component {
   }
 
   loadFilms() {
-    selectAllWithFilter('cinemas', `findMoviesByCinemaId?idCine=${this.props.params.cinemaSelectionId}`, 'films')
+    selectWithFilter('cinemas', `findMoviesByCinemaId?idCine=${this.props.params.cinemaSelectionId}`, 'films')
     .then((response) => {
       this.setState({filmList: response});
     });
@@ -37,7 +37,6 @@ class FilmSelection extends React.Component {
     return(
       <div>
         <h1>{this.props.params.cinemaSelectionId}</h1>
-        <p>Hola</p>
         {filmSelectionItems}
       </div>
     );

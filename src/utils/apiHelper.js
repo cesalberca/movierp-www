@@ -68,7 +68,7 @@ export function selectAll(resource) {
   });
 }
 
-export function selectAllWithFilter(resource, filter, objetiveResource){
+export function selectWithFilter(resource, filter, targetResource){
   return new Promise((resolve, reject) => {
     fetch(`${apiPath}/${resource}/search/${filter}`, {
       method: 'GET'
@@ -77,7 +77,7 @@ export function selectAllWithFilter(resource, filter, objetiveResource){
       if (response.ok) {
         response.json()
         .then(json => {
-          resolve(json._embedded[objetiveResource])
+          resolve(json._embedded[targetResource])
         });
       } else {
         reject(response.error);

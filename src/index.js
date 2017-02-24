@@ -18,8 +18,8 @@ import Sessions from './views/Sessions';
 import Orders from './views/Orders';
 import Products from './views/Products';
 import NotFound from './views/NotFound';
-import CinemaSelection from './views/TicketBuyingSystem/CinemaSelection';
-import FilmSelection from './views/TicketBuyingSystem/FilmSelection';
+import CinemaSelection from './views/tickets/CinemaSelection';
+import FilmSelection from './views/tickets/FilmSelection';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
