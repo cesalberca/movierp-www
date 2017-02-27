@@ -12,8 +12,8 @@ class Providers extends React.Component {
         accessor: 'id'
       },
       {
-        header: 'Nombre Comerical',
-        accessor: 'nombre_comerical'
+        header: 'Nombre Comercial',
+        accessor: 'nombre_comercial'
       },
       {
         header: 'Nombre Fiscal',
