@@ -39,6 +39,7 @@ class SessionSelection extends React.Component {
         availableSeats={item.butacasLibres}
         cinemaId={this.props.params.cinemaSelectionId}
         filmId={this.props.params.movieSelectionId}
+        sessionId={getSelfId(item)}
       />
     );
     return(
