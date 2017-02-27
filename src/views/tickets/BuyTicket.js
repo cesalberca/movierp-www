@@ -1,25 +1,31 @@
 import React from 'react';
 
-import './../../stylesheets/seat.css';
+import './../../stylesheets/seat.css'
 
 class BuyTicket extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      seats: 20
+      seats: 250
     }
 
     this.renderSeats= this.renderSeats.bind(this);
   }
 
   renderSeats() {
+    const rows = this.state.seats * 0.05;
+    const columns = this.state.seats / rows;
     let seats = [];
-    for (let i = 0; i < this.state.seats / 2; i++) {
-      for (let j = 0; j < this.state.seats / 2; j++) {
-        seats.push(<span className="seat ${i % 2 === 0 ? 'seat--ocuppied' : 'seat--free'}" key={"" + i + j}>{i}{j}</span>);
+    let counter = 0;
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < columns; j++) {
+        const isOccupied = i % 2 === 0 ? 'seat--occupied' : 'seat--free';
+        seats.push(<span className={`seat ${isOccupied}`} key={counter}>&emsp;</span>);
+        counter++;
       }
-      seats.push(<br/>);
+      seats.push(<br key={counter}/>);
+      counter++;
     }
     return seats;
   }
