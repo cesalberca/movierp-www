@@ -37,6 +37,8 @@ class SessionSelection extends React.Component {
         key={index}
         date={item.fechaComienzo}
         availableSeats={item.butacasLibres}
+        cinemaId={this.props.params.cinemaSelectionId}
+        filmId={this.props.params.movieSelectionId}
       />
     );
     return(
