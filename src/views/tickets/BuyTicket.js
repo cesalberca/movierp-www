@@ -51,7 +51,7 @@ class BuyTicket extends React.Component {
           </div>
 
           <div className="FormContainer__actionButton">
-            <input type="submit" value="Comprar"/>
+            <input className="btn btn--primary" type="submit" value="Comprar"/>
           </div>
         </form>
       </div>
