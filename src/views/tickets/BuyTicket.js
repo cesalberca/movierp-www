@@ -1,20 +1,34 @@
 import React from 'react';
 
-import './../../stylesheets/seat.css'
+import { selectAll, getSelfId, selectWithFilter } from './../../utils/apiHelper';
+
+import './../../stylesheets/seat.css';
 
 class BuyTicket extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      seats: 250
+      seats: 200,
+      availableSeats: 0,
+      selectedSeats : 0
     }
 
+    this.onSubmit = this.onSubmit.bind(this);
     this.renderSeats= this.renderSeats.bind(this);
+  }
+
+  componentDidMount() {
+    selectWithFilter('CinemaRoom', ``, 'numeroButacas')
+    .then(result => {
+      this.setState({seats: result});
+    });
   }
 
   onSubmit(e) {
     e.preventDefault();
+
+    // `/tickets/${this.props.param.cinemaId}/${this.props.param.filmId}/${this.props.param.sessionId}/buy`
   }
 
   renderSeats() {
