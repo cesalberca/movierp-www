@@ -1,0 +1,12 @@
+.seat {
+  width: 20px;
+  height: 20px;
+}
+
+.seat--occupied {
+  background-color: red;
+}
+
+.seat--free {
+  background-color: green;
+}

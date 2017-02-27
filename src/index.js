@@ -21,6 +21,7 @@ import NotFound from './views/NotFound';
 import CinemaSelection from './views/tickets/CinemaSelection';
 import FilmSelection from './views/tickets/FilmSelection';
 import SessionSelection from './views/tickets/SessionSelection';
+import Buy from './views/tickets/BuyTicket';
 
 import './stylesheets/reset.css';
 import './stylesheets/variables.css';
@@ -58,6 +59,7 @@ ReactDOM.render(
       <Route path="/tickets" component={CinemaSelection} onEnter={requireAuth}/>
       <Route path="/tickets/:cinemaSelectionId" component={FilmSelection}/>
       <Route path="/tickets/:cinemaSelectionId/:movieSelectionId" component={SessionSelection}/>
+      <Route path="/tickets/:cinemaSelectionId/:movieSelectionId/buy" component={Buy}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>,
