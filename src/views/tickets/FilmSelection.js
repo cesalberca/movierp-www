@@ -39,7 +39,8 @@ class FilmSelection extends React.Component {
         title={item.nombre}
         synopsis={item.sinopsis}
         duration={item.duracion}
-        filmId={getSelfId(item)}/>
+        filmId={getSelfId(item)}
+        cinemaId={this.props.params.cinemaSelectionId}/>
     );
 
     return(
