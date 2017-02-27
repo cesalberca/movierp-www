@@ -33,12 +33,11 @@ class SessionSelection extends React.Component {
 
   render(){
     const sesionSelectionItems = this.state.sesionList.map((item, index) =>
-      (
-        <SessionSelectionItem
-          key={index}
-          date={item.fechaComienzo}
-        />
-      )
+      <SessionSelectionItem
+        key={index}
+        date={item.fechaComienzo}
+        availableSeats={item.butacasLibres}
+      />
     );
     return(
       <div>
