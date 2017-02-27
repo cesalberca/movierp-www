@@ -1,4 +1,5 @@
 .card {
+  display: block;
   background-color: white;
   box-shadow: var(--box-shadow-default);
   padding: 2rem;
