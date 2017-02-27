@@ -13,6 +13,10 @@ class BuyTicket extends React.Component {
     this.renderSeats= this.renderSeats.bind(this);
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+  }
+
   renderSeats() {
     const rows = this.state.seats * 0.05;
     const columns = this.state.seats / rows;
@@ -34,7 +38,22 @@ class BuyTicket extends React.Component {
     return (
       <div>
         <h1>Hola</h1>
-        {this.renderSeats()}
+
+        <div className="seating">
+          {this.renderSeats()}
+        </div>
+
+        <form className="FormContainer" onSubmit={this.onSubmit}>
+          <h1 className="FormContainer__Title">Compra de entradas</h1>
+          <div className="FormItem">
+            <label htmlFor="numberOfSeats">Número de butacas a comprar</label>
+            <input className="FormItem__input" name="numberOfSeats" type="number" min="0" max={this.state.seats}/>
+          </div>
+
+          <div className="FormContainer__actionButton">
+            <input type="submit" value="Comprar"/>
+          </div>
+        </form>
       </div>
     );
   }
