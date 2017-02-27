@@ -3,12 +3,19 @@
   height: 20px;
   margin: 3px;
   border-radius: 2px;
+  display: inline-block;
+  transition: 0.25s ease all;
+}
+
+.seat:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
 }
 
 .seat--occupied {
-  background-color: red;
+  background-color: #b51d1d;
 }
 
 .seat--free {
-  background-color: green;
+  background-color: #41c141;
 }
