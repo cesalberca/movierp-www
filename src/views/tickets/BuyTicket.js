@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { selectAll, getSelfId, selectWithFilter } from './../../utils/apiHelper';
+import { selectAll, getSelfId, selectWithFilter, selectById } from './../../utils/apiHelper';
 
 import './../../stylesheets/seat.css';
 
@@ -9,7 +9,7 @@ class BuyTicket extends React.Component {
     super(props);
 
     this.state = {
-      seats: 200,
+      totalSeats: 0,
       availableSeats: 0,
       selectedSeats : 0
     }
@@ -19,21 +19,38 @@ class BuyTicket extends React.Component {
   }
 
   componentDidMount() {
-    selectWithFilter('CinemaRoom', ``, 'numeroButacas')
-    .then(result => {
-      this.setState({seats: result});
+    //Select de la id de la sala desde la id de la sesion
+    let roomId = -1;
+    //console.log(this.props.params);
+
+    selectById('sessions', `${this.props.params.sessionSelectionId}`)
+    .then(result =>{
+      //console.log(result);
+      roomId = result.idSala;
+      selectById('rooms', `${roomId}`)
+
+      .then(result =>{
+        //console.log(result)
+        this.setState({totalSeats: result.numeroButacas})
+        //Select de los asientos libres de la sesion
+        selectById('sessions', `${this.props.params.sessionSelectionId}`)
+
+        .then(result =>{
+          //console.log(result);
+          this.setState({availableSeats: result.butacasLibres});
+        });        
+      })
     });
   }
 
   onSubmit(e) {
     e.preventDefault();
-
-    // `/tickets/${this.props.param.cinemaId}/${this.props.param.filmId}/${this.props.param.sessionId}/buy`
   }
 
   renderSeats() {
-    const rows = this.state.seats * 0.05;
-    const columns = this.state.seats / rows;
+    console.log("numero de sillas: " + this.state.totalSeats)
+    const rows = this.state.totalSeats * 0.05;
+    const columns = this.state.totalSeats / rows;
     let seats = [];
     let counter = 0;
     for (let i = 0; i < rows; i++) {

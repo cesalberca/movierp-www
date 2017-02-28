@@ -86,6 +86,24 @@ export function selectWithFilter(resource, filter, targetResource){
   });
 }
 
+export function selectById(resource, id){
+  return new Promise((resolve, reject) => {
+    fetch(`${apiPath}/${resource}/${id}`, {
+      method: 'GET'
+    })
+    .then(response => {
+      if (response.ok) {
+        response.json()
+        .then(json => {
+          resolve(json)
+        });
+      } else {
+        reject(response.error);
+      }
+    });
+  });
+}
+
 /**
  * Deletes one resource from a resource given an id
  */
