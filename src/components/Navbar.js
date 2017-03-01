@@ -8,10 +8,10 @@ import logo from './../assets/logo.svg';
 
 import './Navbar.css';
 
-const Navbar = ({auth, isActive}) => {
+const Navbar = ({auth, showErpModules}) => {
   return (
       <navbar>
-      {isActive ? (
+      {showErpModules ? (
         <div className="Navbar">
           <IndexLink to="/" className="Navbar__index">
             <img src={logo} className="Navbar__logo" alt="logo" />
