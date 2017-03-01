@@ -47,16 +47,11 @@ class BuyTicket extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    //selectWithFilter('sessions', `buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}`, '')
-    //.then(result => {
-    //  console.log("compra realizada");
-    //});
     if(this.state.selectedSeats > 0){
       fetch(`http://localhost:8080/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
       method: 'GET'
       })
       .then(response =>{
-        //console.log(response);
         swal({
           title: 'Compra realizada',
           text: `Has comprado ${this.state.selectedSeats} entradas`,
@@ -81,9 +76,16 @@ class BuyTicket extends React.Component {
     const columns = this.state.totalSeats / rows;
     let seats = [];
     let counter = 0;
+    
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
-        const isOccupied = i % 2 === 0 ? 'seat--occupied' : 'seat--free';
+        //const isOccupied = i % 2 === 0 ? 'seat--occupied' : 'seat--free';
+        let isOccupied;
+        if((Math.random() * (this.state.totalSeats - 0) + 0) > this.state.availableSeats){
+          isOccupied = 'seat--occupied';
+        } else {
+          isOccupied = 'seat--free';
+        }
         seats.push(<span className={`seat ${isOccupied}`} key={counter}>&emsp;</span>);
         counter++;
       }
