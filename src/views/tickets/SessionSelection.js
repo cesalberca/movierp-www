@@ -16,7 +16,7 @@ class SessionSelection extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.params);
+    //console.log(this.props.params);
     this.loadSessions();
   }
 
@@ -39,11 +39,12 @@ class SessionSelection extends React.Component {
         availableSeats={item.butacasLibres}
         cinemaId={this.props.params.cinemaSelectionId}
         filmId={this.props.params.movieSelectionId}
-        sessionId={getSelfId(item)}
+        sessionId={getSelfId(item)
+        }
       />
     );
     return(
-      <div>
+      <div className="card__grid">
         {sesionSelectionItems}
       </div>
     );

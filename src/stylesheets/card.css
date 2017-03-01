@@ -1,3 +1,10 @@
+.card__grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
 .card {
   display: block;
   background-color: white;
@@ -20,6 +27,15 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.card__full {
+  color: darkred;
+  font-size: 3rem;
+  position: relative;
+  left: 17%;
+  top: 24%;
+  transform: rotate(-15deg);
 }
 
 .card--no-overlay:after {

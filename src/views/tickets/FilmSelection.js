@@ -44,7 +44,7 @@ class FilmSelection extends React.Component {
     );
 
     return(
-      <div>
+      <div className="card__grid">
         {filmSelectionItems}
       </div>
     );

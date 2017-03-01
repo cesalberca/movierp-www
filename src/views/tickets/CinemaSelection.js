@@ -39,7 +39,7 @@ class CinemaSelection extends React.Component {
 
     return (
       <div>
-        <div className="CinemaSelection">
+        <div className="card__grid">
           {cinemaSelectionItems}
         </div>
       </div>
