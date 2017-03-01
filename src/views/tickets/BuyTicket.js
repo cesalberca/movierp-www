@@ -1,4 +1,5 @@
 import React from 'react';
+import swal from 'sweetalert';
 
 import { selectAll, getSelfId, selectWithFilter, selectById } from './../../utils/apiHelper';
 
@@ -16,6 +17,7 @@ class BuyTicket extends React.Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.renderSeats= this.renderSeats.bind(this);
+    this.handleSeatSelection= this.handleSeatSelection.bind(this);
   }
 
   componentDidMount() {
@@ -45,10 +47,36 @@ class BuyTicket extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
+    //selectWithFilter('sessions', `buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}`, '')
+    //.then(result => {
+    //  console.log("compra realizada");
+    //});
+    if(this.state.selectedSeats > 0){
+      fetch(`http://localhost:8080/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
+      method: 'GET'
+      })
+      .then(response =>{
+        //console.log(response);
+        swal({
+          title: 'Compra realizada',
+          text: `Has comprado ${this.state.selectedSeats} entradas`,
+          type: 'success',
+          timer: 3000
+        });
+      });
+    } else {
+      swal({
+          title: 'Selecciona el número de entradas para comprar',
+          text: `¡Compra alguna entrada, anda!`,
+          type: 'error',
+          timer: 3000
+        });
+    }
+    
   }
 
   renderSeats() {
-    console.log("numero de sillas: " + this.state.totalSeats)
+    //console.log("numero de sillas: " + this.state.totalSeats)
     const rows = this.state.totalSeats * 0.05;
     const columns = this.state.totalSeats / rows;
     let seats = [];
@@ -65,6 +93,11 @@ class BuyTicket extends React.Component {
     return seats;
   }
 
+  handleSeatSelection(e){
+    //console.log(e.target.value)
+    this.setState({selectedSeats: e.target.value});
+  }
+
   render() {
     return (
       <div>
@@ -78,7 +111,7 @@ class BuyTicket extends React.Component {
           <h1 className="FormContainer__Title">Compra de entradas</h1>
           <div className="FormItem">
             <label htmlFor="numberOfSeats">Número de butacas a comprar</label>
-            <input className="FormItem__input" name="numberOfSeats" type="number" min="0" max={this.state.seats}/>
+            <input className="FormItem__input" name="numberOfSeats" type="number" min="0" max={this.state.seats} onChange={this.handleSeatSelection}/>
           </div>
 
           <div className="FormContainer__actionButton">
