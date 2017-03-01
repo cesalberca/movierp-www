@@ -76,13 +76,22 @@ class BuyTicket extends React.Component {
     const columns = this.state.totalSeats / rows;
     let seats = [];
     let counter = 0;
+
+    let occupiedSeats = this.state.totalSeats - this.state.availableSeats;
     
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
         //const isOccupied = i % 2 === 0 ? 'seat--occupied' : 'seat--free';
+        //let isOccupied;
+        // if((Math.random() * (this.state.totalSeats - 0) + 0) > this.state.availableSeats){
+        //   isOccupied = 'seat--occupied';
+        // } else {
+        //   isOccupied = 'seat--free';
+        // }
         let isOccupied;
-        if((Math.random() * (this.state.totalSeats - 0) + 0) > this.state.availableSeats){
+        if(occupiedSeats>0){
           isOccupied = 'seat--occupied';
+          occupiedSeats--;
         } else {
           isOccupied = 'seat--free';
         }
@@ -103,7 +112,7 @@ class BuyTicket extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hola</h1>
+        <h1>Compra de entradas</h1>
 
         <div className="seating">
           {this.renderSeats()}
