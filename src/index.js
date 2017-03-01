@@ -44,22 +44,25 @@ const requireAuth = (nextState, replace) => {
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App} auth={auth}>
-      <IndexRoute component={Home}/>
-      <Route path="/login" component={Login}/>
-      <Route path="/cinemas" component={Cinemas} onEnter={requireAuth}/>
-      <Route path="/employees" component={Employees} onEnter={requireAuth}/>
-      <Route path="/users" component={Users} onEnter={requireAuth}/>
-      <Route path="/rooms" component={Rooms} onEnter={requireAuth}/>
-      <Route path="/clients" component={Clients} onEnter={requireAuth}/>
-      <Route path="/providers" component={Providers} onEnter={requireAuth}/>
-      <Route path="/films" component={Films} onEnter={requireAuth}/>
-      <Route path="/sessions" component={Sessions} onEnter={requireAuth}/>
-      <Route path="/orders" component={Orders} onEnter={requireAuth}/>
-      <Route path="/products" component={Products} onEnter={requireAuth}/>
-      <Route path="/tickets" component={CinemaSelection} onEnter={requireAuth}/>
-      <Route path="/tickets/:cinemaSelectionId" component={FilmSelection}/>
-      <Route path="/tickets/:cinemaSelectionId/:movieSelectionId" component={SessionSelection}/>
-      <Route path="/tickets/:cinemaSelectionId/:movieSelectionId/:sessionSelectionId/buy" component={Buy}/>
+      <IndexRoute component={CinemaSelection}/>
+      <Route path="/erp">
+        <IndexRoute component={Home} onEnter={requireAuth}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/cinemas" component={Cinemas} onEnter={requireAuth}/>
+        <Route path="/employees" component={Employees} onEnter={requireAuth}/>
+        <Route path="/users" component={Users} onEnter={requireAuth}/>
+        <Route path="/rooms" component={Rooms} onEnter={requireAuth}/>
+        <Route path="/clients" component={Clients} onEnter={requireAuth}/>
+        <Route path="/providers" component={Providers} onEnter={requireAuth}/>
+        <Route path="/films" component={Films} onEnter={requireAuth}/>
+        <Route path="/sessions" component={Sessions} onEnter={requireAuth}/>
+        <Route path="/orders" component={Orders} onEnter={requireAuth}/>
+        <Route path="/products" component={Products} onEnter={requireAuth}/>
+        <Route path="/tickets" component={CinemaSelection} onEnter={requireAuth}/>
+        <Route path="/tickets/:cinemaSelectionId" component={FilmSelection}/>
+        <Route path="/tickets/:cinemaSelectionId/:movieSelectionId" component={SessionSelection}/>
+        <Route path="/tickets/:cinemaSelectionId/:movieSelectionId/:sessionSelectionId/buy" component={Buy}/>
+      </Route>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>,

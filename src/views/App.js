@@ -13,9 +13,10 @@ class App extends React.Component {
       });
     }
 
+    // We need to hide the navbar in the main view
     return(
       <div className="App">
-        <Navbar auth={this.props.route.auth}/>
+        <Navbar auth={this.props.route.auth} isActive={this.props.location.pathname !== '/'}/>
         <main className="App__content">
           {children}
         </main>
