@@ -18,9 +18,14 @@ class BuyTicket extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.renderSeats= this.renderSeats.bind(this);
     this.handleSeatSelection= this.handleSeatSelection.bind(this);
+    this.loadSeatsData= this.loadSeatsData.bind(this);
   }
 
   componentDidMount() {
+    this.loadSeatsData();
+  }
+
+  loadSeatsData(){
     //Select de la id de la sala desde la id de la sesion
     let roomId = -1;
     //console.log(this.props.params);
@@ -47,27 +52,36 @@ class BuyTicket extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    if(this.state.selectedSeats > 0){
-      fetch(`http://localhost:8080/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
-      method: 'GET'
-      })
-      .then(response =>{
-        swal({
-          title: 'Compra realizada',
-          text: `Has comprado ${this.state.selectedSeats} entradas`,
-          type: 'success',
-          timer: 3000
+    if(this.state.selectedSeats <= this.state.availableSeats){
+      if(this.state.selectedSeats > 0){
+        fetch(`http://localhost:8080/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
+        method: 'GET'
+        })
+        .then(response =>{
+          this.loadSeatsData();
+          swal({
+            title: 'Compra realizada',
+            text: `Has comprado ${this.state.selectedSeats} entradas`,
+            type: 'success',
+            timer: 3000
+          });
         });
-      });
+      } else {
+        swal({
+            title: 'Selecciona el número de entradas para comprar',
+            text: `¡Compra alguna entrada, anda!`,
+            type: 'error',
+            timer: 3000
+        });
+      }
     } else {
-      swal({
-          title: 'Selecciona el número de entradas para comprar',
-          text: `¡Compra alguna entrada, anda!`,
-          type: 'error',
-          timer: 3000
+        swal({
+            title: 'Error en la selección de entradas',
+            text: `¡No puedes comprar tantas entradas!`,
+            type: 'error',
+            timer: 3000
         });
     }
-    
   }
 
   renderSeats() {
