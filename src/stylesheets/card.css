@@ -7,6 +7,19 @@
   width: 200px;
   margin: 0.25rem;
   transition: var(--default-transition);
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card:after {
+  content: "";
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .card__title {
