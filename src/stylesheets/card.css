@@ -22,6 +22,10 @@
   bottom: 0;
 }
 
+.card--no-overlay:after {
+  content: none;
+}
+
 .card__title {
   font-weight: bold;
   margin-bottom: 0.5rem;
