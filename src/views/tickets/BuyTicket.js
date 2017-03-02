@@ -3,6 +3,7 @@ import swal from 'sweetalert';
 
 import { selectAll, getSelfId, selectWithFilter, selectById } from './../../utils/apiHelper';
 
+import './BuyTicket.css';
 import './../../stylesheets/seat.css';
 
 class BuyTicket extends React.Component {
@@ -125,24 +126,25 @@ class BuyTicket extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Compra de entradas</h1>
-
+      <div className="BuyTicket__container">
+        <h1 className="BuyTicket__title">Sitios disponibles:</h1>
         <div className="seating">
           {this.renderSeats()}
         </div>
 
-        <form className="FormContainer" onSubmit={this.onSubmit}>
-          <h1 className="FormContainer__Title">Compra de entradas</h1>
-          <div className="FormItem">
-            <label htmlFor="numberOfSeats">Número de butacas a comprar</label>
-            <input className="FormItem__input" name="numberOfSeats" type="number" min="0" max={this.state.seats} onChange={this.handleSeatSelection}/>
-          </div>
+        <div className="BuyTicket">
+          <form className="FormContainer" onSubmit={this.onSubmit}>
+            <h1 className="FormContainer__Title">Compra de entradas</h1>
+            <div className="FormItem">
+              <label htmlFor="numberOfSeats">Número de butacas a comprar</label>
+              <input className="FormItem__input" name="numberOfSeats" type="number" min="0" max={this.state.seats} onChange={this.handleSeatSelection}/>
+            </div>
 
-          <div className="FormContainer__actionButton">
-            <input className="btn btn--primary" type="submit" value="Comprar"/>
-          </div>
-        </form>
+            <div className="FormContainer__actionButton">
+              <input className="btn btn--primary" type="submit" value="Comprar"/>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
