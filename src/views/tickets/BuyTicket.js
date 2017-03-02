@@ -45,7 +45,7 @@ class BuyTicket extends React.Component {
         .then(result =>{
           //console.log(result);
           this.setState({availableSeats: result.butacasLibres});
-        });        
+        });
       })
     });
   }
@@ -54,7 +54,7 @@ class BuyTicket extends React.Component {
     e.preventDefault();
     if(this.state.selectedSeats <= this.state.availableSeats){
       if(this.state.selectedSeats > 0){
-        fetch(`http://localhost:8080/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
+        fetch(`http://localhost:8080/movierp/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
         method: 'GET'
         })
         .then(response =>{
@@ -92,7 +92,7 @@ class BuyTicket extends React.Component {
     let counter = 0;
 
     let occupiedSeats = this.state.totalSeats - this.state.availableSeats;
-    
+
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
         //const isOccupied = i % 2 === 0 ? 'seat--occupied' : 'seat--free';
