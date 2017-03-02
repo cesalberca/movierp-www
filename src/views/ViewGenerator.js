@@ -93,6 +93,7 @@ class ViewGenerator extends React.Component {
     this.load();
     this.handleCloseCreateModal();
     this.handleCloseEditModal();
+    this.handleCloseDeleteModal();
   }
 
   render() {
@@ -122,7 +123,7 @@ class ViewGenerator extends React.Component {
           modalTitle={`Borrar ${title}`}
           isOpen={this.state.isDeleteOpen}
           handleCloseModal={this.handleCloseDeleteModal}>
-          <DeleteForm targetTable={table} title={`Borrar ${title}`} actionButtonText={`Borrar ${title}`}/>
+          <DeleteForm onSubmit={this.onSubmit} targetTable={table} title={`Borrar ${title}`} actionButtonText={`Borrar ${title}`}/>
         </ModalForm>
 
         <ModalForm
