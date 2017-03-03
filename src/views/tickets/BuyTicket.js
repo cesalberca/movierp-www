@@ -55,7 +55,7 @@ class BuyTicket extends React.Component {
     e.preventDefault();
     if(this.state.selectedSeats <= this.state.availableSeats){
       if(this.state.selectedSeats > 0){
-        fetch(`http://localhost:8080/movierp/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
+        fetch(`http://localhost:8080/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
         method: 'GET'
         })
         .then(response =>{

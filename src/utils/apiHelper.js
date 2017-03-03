@@ -1,7 +1,6 @@
 const defaultPort = 8080;
 const baseAPIPath = 'api'
-const serverPath= 'movierp'
-const apiPath = `http://localhost:${defaultPort}/${serverPath}/${baseAPIPath}`;
+const apiPath = `http://localhost:${defaultPort}/${baseAPIPath}`;
 
 /**
  * Function that inserts to our database using the api. It returns a promise so it must be used as follows:
