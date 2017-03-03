@@ -28,6 +28,7 @@ class DeleteForm extends React.Component {
         title: 'Entrada borrada con éxito',
         type: 'success'
       });
+      this.props.onSubmit();
     })
     .catch(() => {
       swal({

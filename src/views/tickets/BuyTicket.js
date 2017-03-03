@@ -3,6 +3,7 @@ import swal from 'sweetalert';
 
 import { selectAll, getSelfId, selectWithFilter, selectById } from './../../utils/apiHelper';
 
+import './BuyTicket.css';
 import './../../stylesheets/seat.css';
 
 class BuyTicket extends React.Component {
@@ -45,7 +46,7 @@ class BuyTicket extends React.Component {
         .then(result =>{
           //console.log(result);
           this.setState({availableSeats: result.butacasLibres});
-        });        
+        });
       })
     });
   }
@@ -54,7 +55,7 @@ class BuyTicket extends React.Component {
     e.preventDefault();
     if(this.state.selectedSeats <= this.state.availableSeats){
       if(this.state.selectedSeats > 0){
-        fetch(`http://localhost:8080/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
+        fetch(`http://localhost:8080/movierp/api/sessions/search/buyTicketsForSessionById?idSesion=${this.props.params.sessionSelectionId}&ticketAmount=${this.state.selectedSeats}` , {
         method: 'GET'
         })
         .then(response =>{
@@ -92,7 +93,7 @@ class BuyTicket extends React.Component {
     let counter = 0;
 
     let occupiedSeats = this.state.totalSeats - this.state.availableSeats;
-    
+
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
         //const isOccupied = i % 2 === 0 ? 'seat--occupied' : 'seat--free';
@@ -125,24 +126,25 @@ class BuyTicket extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Compra de entradas</h1>
-
+      <div className="BuyTicket__container">
+        <h1 className="BuyTicket__title">Sitios disponibles:</h1>
         <div className="seating">
           {this.renderSeats()}
         </div>
 
-        <form className="FormContainer" onSubmit={this.onSubmit}>
-          <h1 className="FormContainer__Title">Compra de entradas</h1>
-          <div className="FormItem">
-            <label htmlFor="numberOfSeats">Número de butacas a comprar</label>
-            <input className="FormItem__input" name="numberOfSeats" type="number" min="0" max={this.state.seats} onChange={this.handleSeatSelection}/>
-          </div>
+        <div className="BuyTicket">
+          <form className="FormContainer" onSubmit={this.onSubmit}>
+            <h1 className="FormContainer__Title">Compra de entradas</h1>
+            <div className="FormItem">
+              <label htmlFor="numberOfSeats">Número de butacas a comprar</label>
+              <input className="FormItem__input" name="numberOfSeats" type="number" min="0" max={this.state.seats} onChange={this.handleSeatSelection}/>
+            </div>
 
-          <div className="FormContainer__actionButton">
-            <input className="btn btn--primary" type="submit" value="Comprar"/>
-          </div>
-        </form>
+            <div className="FormContainer__actionButton">
+              <input className="btn btn--primary" type="submit" value="Comprar"/>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
