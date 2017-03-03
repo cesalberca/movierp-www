@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 
-import { update, getColumnData, getSelf } from './../utils/apiHelper';
+import { update, getColumnData, getSelf, getSelfId, getId, deleteOne } from './../utils/apiHelper';
 import FormItem from './FormItem';
 
 class EditForm extends React.Component {
@@ -16,6 +16,7 @@ class EditForm extends React.Component {
     this.handleOnChange = this.handleOnChange.bind(this);
     this.loadFormItems = this.loadFormItems.bind(this);
     this.updateEntry = this.updateEntry.bind(this);
+    this.deleteEntry = this.deleteEntry.bind(this);
   }
 
   componentDidMount() {
@@ -51,6 +52,29 @@ class EditForm extends React.Component {
     });
   }
 
+  deleteEntry() {
+    //const selfId = getSelfId(this.props.data);
+    console.log("Selft")
+    console.log(getId(getSelf(this.props.data)));
+    console.log("target able")
+    console.log(this.props.targetTable);
+    deleteOne(this.props.targetTable, getId(getSelf(this.props.data)))
+    .then(() => {
+      //this.loadFormItems();
+      this.props.onSubmit();
+      swal({
+        title: 'Entrada borrada con éxito',
+        type: 'success'
+      });
+    })
+    .catch(() => {
+      swal({
+        title: 'Entrada con ese id no existe',
+        type: 'error'
+      });
+    });
+  }
+
   render() {
     // We need to pass down the initial value to the form items
     const formItemsList = this.state.tableColumns.map((column, index) => {
@@ -72,6 +96,7 @@ class EditForm extends React.Component {
         <form className="FormContainer__Form">
           {formItemsList}
           <div className="FormContainer__container__actionButton">
+            <input type="button" onClick={this.deleteEntry} className="FormContainer__actionButton btn btn--dark" value="Eliminar"/>
             <input type="button" onClick={this.updateEntry} className="FormContainer__actionButton btn btn--primary" value={actionButtonText}/>
           </div>
         </form>

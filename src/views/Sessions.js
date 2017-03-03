@@ -22,6 +22,10 @@ class Sessions extends React.Component {
       {
         header: 'ID Película',
         accessor: 'idPelicula'
+      },
+      {
+        header: 'Asientos libres',
+        accessor: 'butacasLibres'
       }
     ]
   }
